@@ -1,339 +1,381 @@
-# Autonomous Node: Unified Platform Architecture
+# Autonomous Node Platform
 
-**A single infrastructure platform. Multiple configurations. Complete sovereignty.**
-
----
-
-## The Core Concept
-
-The **Autonomous Node** is not a single product—it's a **unified platform** of shared subsystems that can be configured for different purposes:
-
-- **DOME-01** → Food production (geodesic greenhouse)
-- **SOV-HAB** → Habitation (transportable dwelling)
-- **Future variants** → Workshops, clinics, schools, storage
-
-All variants share:
-- Energy independence (solar + battery + DC microgrid)
-- Water autonomy (harvesting + treatment + storage)
-- Thermal regulation (thermal buffer bay + heat distribution)
-- Intelligent control (sensors + automation + GhostBrain integration)
-- Modular construction (standardized mounting points, interfaces, protocols)
-
-**This is not "one size fits all." This is "one infrastructure, many applications."**
+**A Unified Infrastructure System for Sovereign Communities**
 
 ---
 
-## Design Philosophy
+## Overview
 
-### 1. Shared Infrastructure, Not Shared Purpose
+The **Autonomous Node** is a modular platform for off-grid living and food production that forms the physical foundation of the Sovereign Stack. It integrates energy independence, water autonomy, digital connectivity, and environmental control into variants optimized for specific functions.
 
-Traditional modular systems fail because they try to make one thing do everything poorly. The Autonomous Node succeeds because it provides **common infrastructure** while allowing **specialized superstructures**.
-
-**What's shared:**
-- Energy generation and storage
-- Water collection and treatment
-- Foundation and anchoring systems
-- Control and monitoring electronics
-- Thermal management
-
-**What's variant-specific:**
-- Shell structure (dome vs. container vs. custom)
-- Interior layout (agriculture vs. living vs. work)
-- Regulatory pathway (Permitted Development vs. Caravan Act vs. full planning)
-- Use case optimization (light levels, climate control, access patterns)
-
-### 2. Standardized Interfaces, Not Standardized Forms
-
-Like USB-C ports work with infinite devices, Autonomous Node subsystems use **standardized interfaces**:
-
-- **Power:** 48V DC microgrid with standard connectors
-- **Water:** Standardized pipe fittings and flow sensors
-- **Data:** Mesh network protocols for sensor/control
-- **Mounting:** Bolt patterns and load-bearing specifications
-
-This means:
-- Subsystems can be upgraded independently
-- Third-party components can integrate (if they follow specs)
-- Failures are local, not cascading
-- Communities can fork designs without breaking interoperability
-
-### 3. Anti-Fragile Through Diversity
-
-By supporting multiple variants, the Autonomous Node ecosystem becomes **anti-fragile**:
-
-- **Regulatory resilience:** If one pathway closes (e.g., UK bans caravans), other variants remain viable
-- **Supply chain resilience:** If one shell material becomes unavailable, communities switch variants
-- **Use case diversity:** Food production, habitation, and workspace all contribute to community resilience
-- **Innovation diversity:** Forked designs explore different approaches without breaking the core platform
+All variants share a common subsystem architecture, enabling:
+- **Interoperability**: Nodes connect via energy mesh and sovereign mesh
+- **Maintainability**: Standardized components across variants
+- **Scalability**: Proven subsystems replicate reliably
+- **Evolution**: Learnings from one variant improve all others
 
 ---
 
-## Shared Subsystems
+## Platform Variants
 
-All Autonomous Node variants integrate these core systems:
+### DOME-01: Food Production Node (Current Development)
 
-### [Energy System](shared-subsystems/energy-system.md)
-- **Solar array:** 1.2-3kW depending on variant
-- **Battery storage:** 5-15kWh (2-3 days autonomy)
-- **DC microgrid:** 48V distribution with inverter for AC loads
-- **Energy Coupler:** Bidirectional grid interface (import/export)
-- **Monitoring:** Per-circuit power metering
+**Status:** Active design phase, technical specification complete
 
-### [Water System](shared-subsystems/water-system.md)
-- **Rainwater harvesting:** Roof catchment + filtration
-- **Treatment:** UV sterilization + optional reverse osmosis
-- **Storage:** 500-2000L depending on variant
-- **Chain-of-Potability:** Sensor-based quality receipts
-- **Greywater recycling:** Optional for high-usage variants
+**Form Factor:**
+- Geodesic dome structure (Ø6.0m, height ≤2.45m)
+- 28.27m² footprint
+- Single-storey outbuilding classification
 
-### [Thermal Buffer Bay](shared-subsystems/thermal-buffer-bay.md)
-- **Underfloor utility vault:** Houses batteries, water tanks, pumps
-- **Thermal mass:** Water tanks act as heat/cold storage
-- **Heat distribution:** Pipes circulate warm water from solar thermal or waste heat
-- **Condensation management:** Prevents moisture buildup
-- **Access:** Removable floor panels for maintenance
+**Primary Function:**
+- Autonomous food production (3-4 people at 100% RDA)
+- Vertical agriculture (28m² growing surface)
+- Year-round nutritional security
 
-### [Control System](shared-subsystems/control-system.md)
-- **Environmental sensors:** Temperature, humidity, CO2, light levels
-- **Resource monitoring:** Energy production/consumption, water levels
-- **Automation:** Climate control, pump scheduling, alert thresholds
-- **GhostBrain integration:** AI-optimized resource management
-- **Mesh networking:** Connects to Sovereign Mesh for community coordination
+**Legal Strategy:**
+- UK Permitted Development (outbuilding, incidental use)
+- No planning permission required (site conditions permitting)
 
-### [Structural Base](shared-subsystems/structural-base.md)
-- **Foundation options:** Concrete pads, ground screws, or ballast
-- **Anchoring:** Wind load resistance (varies by shell type)
-- **Mounting points:** Standardized interfaces for shell attachment
-- **Leveling:** Adjustable supports for uneven terrain
-- **Modularity:** Subsystems bolt on/off without structural modifications
+**Key Differentiators:**
+- Transparent shell (polycarbonate dome) for natural light
+- Vertical rack systems for intensive growing
+- Mushroom cultivation in thermal buffer bay
+- Optimized for plant production, not habitation
+
+**Documentation:** [`dome-01/`](dome-01/)
 
 ---
 
-## Current Variants
+### SOV-HAB: Dwelling Node (Future Development)
 
-### [DOME-01: Food Production Node](dome-01/)
+**Status:** Concept phase, informed by DOME-01 validation
 
-**Purpose:** Autonomous greenhouse for year-round food production
+**Form Factor:**
+- Rectangular transportable structure (10m × 2.55m)
+- ~25m² internal floor area
+- Chassis-mounted, relocatable
 
-**Shell:** Geodesic dome (hemispherical, self-supporting)
-**Footprint:** 4.5m diameter (15.9m² internal)
-**Height:** 2.25m (suitable for vertical agriculture racks)
-**Regulatory:** UK Permitted Development (no planning permission)
+**Primary Function:**
+- Human habitation (sleeping, cooking, living)
+- Energy/water/mesh node for community
+- Mobile sovereignty (legal + physical)
 
-**Optimizations:**
-- High light transmission (polycarbonate glazing)
-- Vertical growing racks (5 tiers, hydroponics)
-- Climate control (ventilation, heating, cooling)
-- Water integration (nutrient delivery, recirculation)
+**Legal Strategy:**
+- UK Caravan Act compliance
+- Classified as mobile home, avoids permanent planning restrictions
+- Can be relocated without losing legal status
 
-**Status:** Phase 2 - Design refinement, first prototype planned
+**Key Differentiators:**
+- Opaque insulated envelope (thermal performance priority)
+- Integrated living quarters (kitchen, bath, bedroom)
+- Transportability via truck (not continuous towing)
+- Optimized for habitation, not food production
 
-**[Full specifications →](dome-01/specifications.md)**
-
----
-
-### [SOV-HAB: Autonomous Dwelling](sov-hab/)
-
-**Purpose:** Mobile yet permanent habitation with full autonomy
-
-**Shell:** Shipping container or custom chassis (10m × 2.55m)
-**Footprint:** 25.5m² internal
-**Height:** 2.6m (standing room)
-**Regulatory:** UK Caravan Act (avoids planning permission)
-
-**Optimizations:**
-- Habitable interior (sleeping, cooking, working, living)
-- Insulation (thermal comfort year-round)
-- Privacy (opaque walls, window placement)
-- Mobility (transportable on truck, semi-permanent once placed)
-
-**Status:** Phase 3 - Planned for deployment after DOME-01 validation
-
-**[Full specifications →](sov-hab/specifications.md)** *(coming soon)*
+**Documentation:** [`sov-hab/`](sov-hab/) *(coming soon)*
 
 ---
 
-## How to Use This Documentation
+## Shared Subsystem Architecture
 
-### If you're building DOME-01:
-1. Read [dome-01/README.md](dome-01/README.md) for overview
-2. Review [dome-01/specifications.md](dome-01/specifications.md) for full specs
-3. Study shared subsystems (energy, water, thermal, control)
-4. Check [dome-01/bom.md](dome-01/bom.md) for Bill of Materials
-5. Follow [dome-01/regulatory-compliance.md](dome-01/regulatory-compliance.md) for UK PD pathway
+Both variants are built on the same foundational systems. This creates:
+- **Reduced R&D cost**: Prove once, deploy everywhere
+- **Supply chain efficiency**: Bulk purchasing of common components
+- **Cross-training**: Installers/maintainers learn one system
+- **Resilience**: If one variant succeeds, all variants benefit
 
-### If you're designing a new variant:
-1. Understand shared subsystem interfaces (standardized power, water, data, mounting)
-2. Review existing variants to see what's already solved
-3. Define your variant's unique requirements (shell, layout, regulatory pathway)
-4. Fork this repo and create `hardware/autonomous-node/your-variant/`
-5. Document deviations from shared subsystems (if any)
+### Common Subsystems
 
-### If you're contributing to shared subsystems:
-1. Improvements to energy/water/thermal/control benefit ALL variants
-2. Maintain backward compatibility (or version your changes)
-3. Test across multiple variants (don't optimize for just one)
-4. Document interface changes clearly (breaking changes require major version bump)
+#### 1. Energy System
+**Function:** Solar generation + battery storage + DC microgrid
 
----
+**Core Components:**
+- Solar array (1.2-7 kWp depending on variant/mode)
+- LiFePO₄ battery bank (5-30 kWh)
+- MPPT charge controller (48V)
+- DC distribution (pumps, fans, LEDs native DC)
+- Optional inverter (230V AC for tools/appliances)
 
-## Interoperability and Forking
+**Innovation:** **48V DC Anderson couplers** enable peer-to-peer energy sharing between nodes.
 
-### Fork-Compatible Design
-
-Any variant can fork the Autonomous Node platform as long as it:
-- **Respects interface standards** (power, water, data, mounting)
-- **Documents deviations** (if any subsystems are modified)
-- **Maintains attribution** (links back to original Sovereign Stack project)
-
-Forked variants can:
-- Use different shell structures (triangular, rectangular, custom)
-- Modify subsystem sizing (more/less solar, larger/smaller water tanks)
-- Add entirely new subsystems (e.g., aquaponics, composting toilets)
-- Diverge regulatory pathways (non-UK jurisdictions)
-
-**Forking is encouraged.** Diversity strengthens the ecosystem.
-
-### Cross-Variant Learning
-
-Innovations in one variant often benefit others:
-- **DOME-01's vertical racks** → Could be adapted for SOV-HAB vertical storage
-- **SOV-HAB's insulation strategy** → Could reduce DOME-01 heating costs
-- **New control algorithms** → Apply across all variants
-- **Third-party integrations** → Benefit everyone if they follow interface standards
+**Documentation:** [`shared-subsystems/energy-system.md`](shared-subsystems/energy-system.md)
 
 ---
 
-## Regulatory Strategy
+#### 2. Water System
+**Function:** Rainwater harvesting + treatment + closed-loop recycling
 
-Different variants = different regulatory pathways:
+**Core Components:**
+- Collection (gutters, downpipes, first-flush diversion)
+- Storage (raw water 500-1000L, potable 200-300L)
+- Treatment (UV sterilization, activated carbon, optional RO for coastal)
+- Distribution (12V pumps, manifold, color-coded quick-connect fittings)
+- Greywater recovery (bio-filter + UV for non-potable reuse)
 
-### DOME-01 (UK Permitted Development)
-- **No planning permission** if under 5m² and under 2.5m height
-- **Outbuilding classification** (not habitable dwelling)
-- **Temporary structure** (designed for disassembly)
+**Innovation:** Treats water as packet-switched resource, routes by quality and need.
 
-### SOV-HAB (UK Caravan Act)
-- **No planning permission** if not permanent foundation
-- **Caravan classification** (mobile structure on wheels or skids)
-- **28-day rule** (can occupy without consent for up to 28 days/year, or longer with permission)
-
-### Future Variants
-- **Workshop:** Industrial shed regulations
-- **Clinic:** Healthcare facility compliance
-- **School:** Educational building standards
-
-**Key insight:** By supporting multiple regulatory pathways, the Autonomous Node ecosystem is resilient to policy changes in any single category.
+**Documentation:** [`shared-subsystems/water-system.md`](shared-subsystems/water-system.md)
 
 ---
 
-## Technical Specifications (Cross-Variant)
+#### 3. Thermal Buffer Bay (TBB)
+**Function:** Non-excavated underfloor utility vault providing thermal mass and service access
 
-### Power System
-- **Voltage:** 48V DC (safe, efficient, standard for off-grid)
-- **Solar capacity:** 1.2-3kW (variant-dependent)
-- **Battery capacity:** 5-15kWh (2-3 days autonomy)
-- **Grid interface:** Energy Coupler (bidirectional, optional)
+**Core Components:**
+- Prefabricated insulated cassettes (600mm internal height)
+- Water tanks, battery enclosure, storage bins
+- Mushroom cultivation module (DOME-01)
+- Service hatches (600×600mm) for maintenance
 
-### Water System
-- **Catchment area:** Roof surface (variant-dependent)
-- **Storage capacity:** 500-2000L (variant-dependent)
-- **Treatment:** UV sterilization + filtration
-- **Monitoring:** Flow sensors + quality sensors (turbidity, pH, temperature)
+**Innovation:** Raised vault (not dug) means no excavation permits, relocatable if needed.
 
-### Data/Control
-- **Mesh network:** WiFi + LoRa (Sovereign Mesh compatible)
-- **Sensors:** Temperature, humidity, CO2, light, power, water
-- **Automation:** Programmable logic (GhostBrain integration)
-- **Receipts:** All sensor readings logged to Integrity Chain
-
-### Structural
-- **Foundation:** Modular (concrete pads, ground screws, or ballast)
-- **Wind resistance:** Engineered per variant (dome vs. box vs. custom)
-- **Snow load:** Designed for UK climate (40 kg/m² minimum)
-- **Seismic:** Not required for UK, but can be specified for other regions
+**Documentation:** [`shared-subsystems/thermal-buffer-bay.md`](shared-subsystems/thermal-buffer-bay.md)
 
 ---
 
-## Bill of Materials (Shared Components)
+#### 4. Control System
+**Function:** Sensors + automation + AI advisor (GhostBrain)
 
-**Full BOM varies by variant.** Shared components across all variants:
+**Core Components:**
+- Industrial PLC or Raspberry Pi-based controller
+- Sensor array (temperature, humidity, CO₂, pH, EC, water level, leak detection)
+- 10" touchscreen display
+- Optional connectivity (WiFi, 4G for remote monitoring)
+- GhostBrain AI: advisor/simulator/auditor (not arbiter)
 
-| Component | Specification | Quantity | Approx. Cost |
-|-----------|---------------|----------|--------------|
-| Solar panels | 300W monocrystalline | 4-10 | £200 each |
-| Battery bank | 48V lithium (LiFePO4) | 5-15kWh | £1500-4000 |
-| Charge controller | MPPT 60A | 1 | £300 |
-| DC-DC converters | 48V → 12V/5V | 2 | £50 each |
-| Inverter | 48V DC → 230V AC | 1 | £400 |
-| Water tank | Food-grade IBC (1000L) | 1-2 | £100 each |
-| UV sterilizer | 10-20 GPM flow rate | 1 | £200 |
-| Submersible pump | 12V DC | 2 | £50 each |
-| Environmental sensors | Temp/humidity/CO2 | 3-5 | £30 each |
-| Mesh node | Raspberry Pi 4 + LoRa HAT | 1 | £100 |
+**Innovation:** Human override always available (Node Veto Escalation Protocol). AI suggests, humans decide.
 
-**Total shared infrastructure cost: £3,000-6,000** (varies by sizing)
-
-**Variant-specific costs (shell, interior, etc.): £2,000-8,000**
-
-**Total Autonomous Node: £5,000-14,000** depending on variant and specifications.
+**Documentation:** [`shared-subsystems/control-system.md`](shared-subsystems/control-system.md)
 
 ---
 
-## Safety and Compliance
+#### 5. Structural Base
+**Function:** Anchoring + leveling + foundation interface
 
-All variants must address:
+**Core Components:**
+- Screw piles (6-10 piles, 1200-1800mm depth) OR ballasted ring beam
+- Leveling brackets (±5mm tolerance)
+- Ground preparation (geotextile, gravel drainage)
+- Anti-creep anchoring (wind/seismic resistance)
 
-### Electrical Safety
-- **48V DC:** Safer than mains voltage, but still requires proper wiring
-- **Fusing:** Every circuit protected with appropriate fuses
-- **Grounding:** All metal components bonded to earth
-- **Waterproofing:** IP65+ rated for outdoor components
+**Innovation:** Touch the earth lightly. Designed for relocation if needed, minimal site disturbance.
 
-### Structural Safety
-- **Load calculations:** Engineer-verified for roof loads (solar, snow, wind)
-- **Anchoring:** Adequate for worst-case wind speeds (UK: 120 mph gusts)
-- **Fire resistance:** Materials meet building regulations (where applicable)
-- **Emergency egress:** All habitable variants have multiple exits
-
-### Water Safety
-- **Potable water:** UV sterilization + filtration (meets WHO standards)
-- **Legionella prevention:** Water temperature management
-- **Backflow prevention:** Check valves prevent contamination
-- **Regular testing:** Chain-of-Potability sensors + manual lab tests
+**Documentation:** [`shared-subsystems/structural-base.md`](shared-subsystems/structural-base.md)
 
 ---
 
-## Contributing to Autonomous Node
+## Design Philosophy: Mutation, Not Fragmentation
 
-We need:
-- **Variant designs:** New configurations for different use cases
-- **Subsystem improvements:** Better batteries, more efficient solar, advanced sensors
-- **Regional adaptations:** Non-UK regulatory pathways, climate-specific modifications
-- **Real-world testing:** Deploy prototypes, document failures and successes
-- **Cost optimization:** Cheaper materials, local sourcing, DIY-friendly designs
+The Autonomous Node platform is designed to **evolve**, not fork into incompatible products.
 
-See [CONTRIBUTING.md](../../../CONTRIBUTING.md) for guidelines.
+### Why DOME-01 First?
+
+**DOME-01 serves as the proving ground** for the entire platform:
+
+1. **Lower stakes**: Food production failure is recoverable; housing failure is catastrophic
+2. **Regulatory simplicity**: Outbuilding classification easier than dwelling
+3. **System validation**: Energy, water, thermal, control systems tested under real load
+4. **Economic model**: Proves OPEX, maintenance intervals, user labor requirements
+5. **Supply chain**: Establishes vendor relationships, bulk pricing, installer training
+
+### The Mutation Path: DOME-01 → SOV-HAB
+
+Once DOME-01 validates the core subsystems (12-24 months field testing), those systems migrate directly into SOV-HAB with minimal modification:
+
+| Subsystem | DOME-01 Implementation | SOV-HAB Adaptation |
+|-----------|------------------------|---------------------|
+| **Energy** | 3-7 kWp solar, 10-30 kWh battery | Same components, different mounting (roof vs ground array) |
+| **Water** | 500-1000L raw, 200-300L potable, greywater recycling | Add shower/sink drainage, same treatment chain |
+| **Thermal Buffer Bay** | Mushroom cultivation + utility storage | Battery + water tanks + tool storage (no mushrooms) |
+| **Control** | GhostBrain manages grow systems | GhostBrain manages HVAC + home systems |
+| **Structure** | Geodesic dome shell | Rectangular SIP panels on chassis |
+
+**Key insight:** The *guts* stay the same. Only the *skin* changes.
 
 ---
 
-## Questions?
+## Interoperability: Nodes in Community
 
-- **General:** hello@o1labs.community
-- **Technical:** Open a GitHub Discussion
-- **Hardware-specific:** hardware@o1labs.community
+### The Mesh Network
+
+All Autonomous Nodes are designed to connect via:
+
+**Energy Mesh:**
+- 48V DC couplers between neighboring nodes
+- AI-mediated power routing (give-when-able, receive-when-needed)
+- Contribution credits + trust metrics (not price signals)
+
+**Sovereign Mesh:**
+- WiFi mesh (local intranet) + LoRa (long-range backbone)
+- Operates independently of ISPs/internet
+- Governance, chat, file sharing, service discovery
+
+**GhostStack Integration:**
+- Each node participates in cell governance
+- Proposals, votes, receipts logged locally
+- Forks peacefully when conflict arises
+
+### Example: 3-Node Micro-Community
+
+```
+[SOV-HAB-01]───────[DOME-01-A]
+  (Alice's home)    (Alice's food)
+       │                │
+       └────Energy──────┤
+       └────Mesh────────┤
+                        │
+                   [SOV-HAB-02]
+                   (Bob's home, shares
+                    DOME-01-A surplus)
+```
+
+**Outcome:**
+- Alice lives in SOV-HAB-01, grows food in DOME-01-A
+- Bob lives in SOV-HAB-02, trades labor-hours for food from DOME-01-A
+- Energy flows between all three nodes based on generation/need
+- Mesh enables governance + communication without internet
+- If disagreement arises, they fork peacefully rather than fight
 
 ---
 
-## Related Documentation
+## Development Status
 
-- **[CORE.md](../../../CORE.md)** - Three irreducible axioms
-- **[NON_GOALS.md](../../../NON_GOALS.md)** - What we refuse to become
-- **[STATUS.md](../../../STATUS.md)** - Current project phase
+### DOME-01 (Active)
+
+✅ Technical specification complete
+✅ BOM finalized (Sections 10-11)
+✅ Regulatory pathway mapped (UK PD)
+✅ Installation sequence documented
+🔄 Demonstration unit construction (pending)
+🔄 12-month field validation (pending)
+
+**Next Actions:**
+- Build first unit (see [`dome-01/specifications.md`](dome-01/specifications.md))
+- Collect operational data
+- Refine based on real-world performance
 
 ---
 
-*"Flow over containment. Replication over scaling. Sovereignty as verb, not noun."*
+### SOV-HAB (Future)
 
-**Maintained By:** O1 Labs CIC
-**License:** See [LICENSE.md](../../../LICENSE.md)
+📋 Concept phase
+📋 Informed by DOME-01 learnings
+⏳ Design specification: After DOME-01 validation
+⏳ Prototype construction: 12-18 months post-DOME-01
+
+**Waiting for:**
+- DOME-01 energy system performance data (winter load, autonomy days)
+- DOME-01 water system validation (closed-loop stability, treatment effectiveness)
+- DOME-01 control system refinement (sensor reliability, GhostBrain UX)
+- DOME-01 TBB thermal performance (passive temperature stability)
+
+**Why wait:** Don't build a dwelling with unproven life-support systems.
+
+---
+
+## Economic Model
+
+### Capital Cost Comparison
+
+| Variant | Base Config | Enhanced Config | Target Market |
+|---------|-------------|-----------------|---------------|
+| **DOME-01** | £33,500-52,500 (Mode A) | £50,000-78,000 (Mode B) | Food security, homesteads, institutions |
+| **SOV-HAB** | £45,000-65,000 (est.) | £60,000-85,000 (est.) | Off-grid living, mobile sovereignty |
+
+### Operational Cost (Annual)
+
+| Cost Category | DOME-01 | SOV-HAB (est.) |
+|---------------|---------|----------------|
+| Consumables | £850-1,500 | £300-600 |
+| Maintenance | £500-980 | £800-1,200 |
+| Utilities (if grid-tied backup) | £0-600 | £0-800 |
+| **Total OPEX** | **£1,350-3,080** | **£1,100-2,600** |
+
+### Combined Deployment
+
+**Complete off-grid homestead:**
+- 1× SOV-HAB (living quarters)
+- 1× DOME-01 (food production)
+- Total capital: £78,500-130,500
+- Total OPEX: £2,450-5,680/year
+- Supports: 2-4 people in complete autonomy
+
+**Comparison:** UK household spending on rent + food = £15,000-25,000/year
+**Payback:** Never, on pure economics. This is **resilience infrastructure**, not cost-saving.
+
+---
+
+## Why This Matters
+
+The Autonomous Node platform is not about "tiny houses" or "urban farming."
+
+It is about **building the physical infrastructure for communities that cannot be contained, co-opted, or collapsed** by centralized systems.
+
+### The Test
+
+Can a small group of humans, armed with these blueprints, build a thriving community that operates independently of—yet peacefully alongside—the industrial civilization that currently contains them?
+
+- **If yes:** The Sovereign Stack succeeds by enabling others to fork it.
+- **If no:** The documentation of this attempt becomes a learning resource for the next generation.
+
+### The Path Forward
+
+1. **Prove DOME-01** (food production autonomy)
+2. **Evolve to SOV-HAB** (living quarters autonomy)
+3. **Connect via mesh** (energy + data + governance autonomy)
+4. **Replicate, not scale** (growth through forking, not hierarchy)
+
+---
+
+## Documentation Structure
+
+```
+autonomous-node/
+├── README.md                    ← You are here
+├── shared-subsystems/           ← Common to all variants
+│   ├── energy-system.md
+│   ├── water-system.md
+│   ├── thermal-buffer-bay.md
+│   ├── control-system.md
+│   └── structural-base.md
+├── dome-01/                     ← Food production variant
+│   ├── README.md
+│   ├── specifications.md        (Full spec from PDF)
+│   ├── shell-structure.md       (Geodesic dome)
+│   ├── vertical-agriculture.md  (Rack systems + hydroponics)
+│   ├── bom.md                   (Bill of materials)
+│   └── regulatory-compliance.md (UK PD pathway)
+└── sov-hab/                     ← Dwelling variant (coming soon)
+    ├── README.md
+    ├── specifications.md
+    ├── chassis-structure.md
+    ├── habitation-layout.md
+    ├── bom.md
+    └── regulatory-compliance.md
+```
+
+---
+
+## Contributing
+
+See [CONTRIBUTING.md](../../CONTRIBUTING.md) for:
+- How to propose design improvements
+- Component testing protocols
+- Field data submission
+- Installation documentation standards
+
+---
+
+## License
+
+This platform design is released under O1 Labs CIC's dual-license model:
+
+**Class A (AGPL-3.0):** Free for personal, educational, research, and civic use.
+**Class B (Commercial):** Contact licensing@o1labs.org for commercial deployment.
+
+See [LICENSE.md](../../LICENSE.md) for full terms.
+
+---
+
+**Autonomous Node Platform**
+*Version 1.0 - January 2026*
+*Flow over containment. Replication over scaling. Sovereignty as verb, not noun.*
