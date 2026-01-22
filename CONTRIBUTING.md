@@ -2,6 +2,8 @@
 
 Thank you for your interest in contributing to the Sovereign Stack! This project exists to serve autonomous communities, and we welcome contributions from builders, designers, developers, researchers, and community organizers.
 
+**⚠️ Before contributing, read [CORE.md](CORE.md)** - Understanding the three irreducible axioms is essential for meaningful contribution. These principles define what the Sovereign Stack **must** be and cannot be changed without breaking the system.
+
 ---
 
 ## Table of Contents
@@ -498,14 +500,19 @@ The Sovereign Stack community is committed to:
 
 ### Philosophy Alignment
 
-Contributions should align with Sovereign Stack principles:
+**Read [CORE.md](CORE.md) to understand the project's foundational principles.**
 
-- **Flow over containment**: Enable energy circulation, not hoarding
-- **Replication over scaling**: Support community autonomy, not centralized growth
-- **Sovereignty as verb**: Design for active self-governance, not passive consumption
+Contributions should align with the three irreducible axioms:
+
+1. **Flow over containment**: Enable energy circulation, not hoarding
+2. **Sovereignty via forkability**: Support community autonomy through horizontal replication, not centralized growth
+3. **Truth by receipts**: Design for cryptographic accountability, not institutional authority
+
+**Additional alignment:**
+- **Active sovereignty**: Design for active self-governance, not passive consumption
 - **Community benefit**: Prioritize collective good over individual profit
 
-If your contribution contradicts these principles, discuss with maintainers before proceeding.
+If your contribution contradicts these principles, discuss with maintainers before proceeding. See [CORE.md](CORE.md) for what cannot be changed without breaking the stack.
 
 ---
 
