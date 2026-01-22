@@ -6,12 +6,36 @@ All Rights Reserved (Subject to License Classes Below)
 
 ---
 
+## License Structure
+
+This project uses a **dual-license model**:
+
+- **Class A (Non-Commercial Use)**: Licensed under **GNU Affero General Public License v3.0 (AGPL-3.0)**
+  - See the `LICENSE` file for full AGPL-3.0 terms
+  - Applies to personal, educational, civic, research, and community cooperative use
+  - Strong copyleft ensures community access to improvements
+
+- **Class B (Commercial Use)**: Requires separate written approval from O1 Labs CIC
+  - See "Class B License" section below for application process
+  - Revenue sharing arrangements apply
+  - Protects against extractive commercial exploitation
+
+**Quick decision guide:**
+- Building a SOV-HAB for your family? → Class A (AGPL-3.0)
+- Running a non-profit community project? → Class A (AGPL-3.0)
+- Manufacturing SOV-HABs for sale? → Class B (commercial approval required)
+- Offering paid consulting services? → Class B (commercial approval required)
+
+**Not sure which applies?** See `.github/LICENSE-FAQ.md` or email licensing@o1labs.community
+
+---
+
 ## Overview
 
 The Sovereign Stack is licensed under a **dual-class licensing model** designed to ensure maximum community benefit while protecting against extractive commercial exploitation.
 
-- **Class A License** (Default): Open Non-Commercial Use
-- **Class B License** (By Approval): Controlled Commercial Use
+- **Class A License** (Default): AGPL-3.0 for open non-commercial use
+- **Class B License** (By Approval): Controlled commercial use with revenue sharing
 
 All contributions to this project are subject to these licensing terms unless explicitly agreed otherwise in writing by O1 Labs CIC Directors.
 
