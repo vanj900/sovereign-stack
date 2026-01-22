@@ -1,0 +1,107 @@
+name: Documentation Improvement
+description: Suggest improvements to documentation
+title: "[Docs]: "
+labels: ["documentation", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve our documentation! Clear docs are essential for community adoption.
+
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Documentation Type
+      description: What kind of documentation needs work?
+      options:
+        - Technical documentation (architecture, APIs)
+        - Builder's guides (construction, assembly)
+        - Governance documentation
+        - Protocol specifications
+        - Legal/compliance documentation
+        - Research papers
+        - README or getting started
+        - Code comments
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What's the problem?
+      options:
+        - Missing documentation
+        - Unclear or confusing
+        - Incorrect information
+        - Outdated content
+        - Typo or formatting
+        - Translation needed
+        - Broken links
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: Location
+      description: Where is the documentation issue? (file path, URL, section)
+      placeholder: "docs/technical/architecture.md, section 'Energy Coupler'"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's Wrong?
+      description: Describe the issue clearly
+      placeholder: "The current documentation says X, but it should say Y because..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested Improvement
+      description: How should it be fixed?
+      placeholder: "I suggest we add/change/clarify..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: audience
+    attributes:
+      label: Target Audience
+      description: Who needs this documentation?
+      placeholder: |
+        - Developers building on GhostStack
+        - Community builders deploying SOV-HABs
+        - Researchers studying the system
+        - New contributors
+      render: markdown
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I can write or update this documentation
+          required: false
+        - label: I can provide technical review
+          required: false
+        - label: I can create diagrams or illustrations
+          required: false
+        - label: I can translate to another language
+          required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission Checklist
+      options:
+        - label: I have checked if this is already documented elsewhere
+          required: true
+        - label: This documentation serves community benefit
+          required: true

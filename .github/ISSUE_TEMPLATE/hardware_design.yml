@@ -1,0 +1,201 @@
+name: Hardware Design Proposal
+description: Propose a new hardware design or modification
+title: "[Hardware]: "
+labels: ["hardware", "design", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing hardware design ideas! Please provide details about your proposed design.
+
+  - type: dropdown
+    id: system
+    attributes:
+      label: Hardware System
+      description: Which hardware system does this relate to?
+      options:
+        - SOV-HAB Structure
+        - Energy Coupler
+        - Solar/Battery Systems
+        - MLDT Sensors
+        - Water Treatment
+        - Mesh Network Hardware
+        - Climate Control (HVAC)
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Design Type
+      description: What kind of contribution is this?
+      options:
+        - New component design
+        - Modification to existing design
+        - Alternative implementation
+        - Manufacturing improvement
+        - Safety enhancement
+        - Cost reduction
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Design Description
+      description: Detailed description of the hardware design
+      placeholder: "This design adds/modifies..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this design needed?
+      placeholder: "Current designs have limitations..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: specifications
+    attributes:
+      label: Technical Specifications
+      description: Key specs, dimensions, materials, performance characteristics
+      placeholder: |
+        - Dimensions: 100mm x 50mm x 20mm
+        - Materials: Aluminum alloy 6061
+        - Power: 12V DC, 2A max
+        - Operating temp: -20°C to 60°C
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: bom
+    attributes:
+      label: Bill of Materials (BOM)
+      description: List of components with specifications and approximate costs
+      placeholder: |
+        | Part | Qty | Specification | Source | Cost |
+        |------|-----|---------------|--------|------|
+        | Microcontroller | 1 | ESP32 | Generic | $5 |
+        | Sensor | 2 | DS18B20 | Generic | $3 |
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: manufacturing
+    attributes:
+      label: Manufacturing Approach
+      description: How can this be built? (DIY, professional, specialized tools, etc.)
+      placeholder: "Can be assembled with basic hand tools..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety Considerations
+      description: Hazards, precautions, certifications needed
+      placeholder: |
+        - Electrical: Follow NEC/IEC standards
+        - Structural: Load-bearing capacity of X kg
+        - Chemical: Handle with gloves
+      render: markdown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: buildability
+    attributes:
+      label: Buildability Level
+      description: What skill level is required?
+      options:
+        - Beginner - Basic hand tools, no specialized skills
+        - Intermediate - Some electrical/mechanical experience
+        - Advanced - Specialized tools or skills required
+        - Professional - Requires licensed contractor
+    validations:
+      required: true
+
+  - type: textarea
+    id: files
+    attributes:
+      label: Design Files
+      description: CAD files, schematics, diagrams (attach or link)
+      placeholder: |
+        - CAD: [Link to FreeCAD file]
+        - Schematic: [Link to diagram]
+        - PCB: [Link to KiCad project]
+
+  - type: textarea
+    id: testing
+    attributes:
+      label: Testing & Validation
+      description: How has this design been tested?
+      placeholder: |
+        - Prototyped and tested in [environment]
+        - Verified specs: [list]
+        - Known limitations: [list]
+
+  - type: checkboxes
+    id: standards
+    attributes:
+      label: Design Standards
+      options:
+        - label: Uses off-the-shelf components where possible
+          required: false
+        - label: Designed for repairability
+          required: false
+        - label: Modular and replaceable
+          required: false
+        - label: Meets relevant safety standards
+          required: false
+        - label: Includes assembly instructions
+          required: false
+
+  - type: checkboxes
+    id: files-checklist
+    attributes:
+      label: File Formats
+      description: Which file formats will you provide?
+      options:
+        - label: FreeCAD (.FCStd) or other open-source CAD
+          required: false
+        - label: STEP or IGES (interoperability)
+          required: false
+        - label: PDF documentation
+          required: false
+        - label: Gerber files (for PCBs)
+          required: false
+        - label: Bill of Materials (BOM)
+          required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I have built a prototype
+          required: false
+        - label: I can provide CAD files
+          required: false
+        - label: I can create assembly instructions
+          required: false
+        - label: I am willing to iterate based on feedback
+          required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission Checklist
+      options:
+        - label: I have searched existing issues to avoid duplicates
+          required: true
+        - label: Design prioritizes buildability and repairability
+          required: true
+        - label: Safety considerations are documented
+          required: true

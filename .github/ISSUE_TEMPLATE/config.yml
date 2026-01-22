@@ -1,0 +1,14 @@
+blank_issues_enabled: true
+contact_links:
+  - name: GitHub Discussions
+    url: https://github.com/vanj900/sovereign-stack/discussions
+    about: Ask questions, share ideas, or discuss the project with the community
+  - name: General Inquiries
+    url: mailto:hello@o1labs.community
+    about: Contact O1 Labs CIC for general questions
+  - name: Security Vulnerabilities
+    url: mailto:security@o1labs.community
+    about: Report security vulnerabilities privately (do not create public issues)
+  - name: Commercial Licensing
+    url: mailto:licensing@o1labs.community
+    about: Inquire about Class B commercial licensing
