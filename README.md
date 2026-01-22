@@ -2,6 +2,11 @@
 
 **A Complete Civic Operating System for Autonomous Communities**
 
+**📖 Essential Reading:**
+- [CORE.md](CORE.md) - The three irreducible axioms
+- [NON_GOALS.md](NON_GOALS.md) - What we refuse to become
+- [STATUS.md](STATUS.md) - Current project phase (Phase 2: Stabilization)
+
 ---
 
 ## Overview
@@ -230,18 +235,34 @@ This work stands on the shoulders of:
 
 ---
 
+## Documentation
+
+The documentation is organized as a **progressive path** from philosophy to implementation:
+
+- **[00_Foundation](docs/00_Foundation/)** - Why this exists, philosophical framework
+- **[01_Core_Architecture](docs/01_Core_Architecture/)** - System design, five layers
+- **[02_System_Protocols](docs/02_System_Protocols/)** - Operational protocols
+- **[03_Living_Meshes](docs/03_Living_Meshes/)** - Subsystems (energy, food, water, health)
+- **[04_Implementation](docs/04_Implementation/)** - Building guides, code architecture
+
+**Start here:** [docs/README.md](docs/README.md) for navigation guidance
+
+---
+
 ## Repository Structure
 
 ```
 sovereign-stack/
-├── docs/                          # Complete documentation
-│   ├── architectural-overview.md  # System design
-│   ├── technical/                 # Subsystem specs
-│   ├── governance.md              # Cell and fork mechanics
-│   ├── builders/                  # Construction guides
-│   ├── legal/                     # Compliance by jurisdiction
-│   └── research/                  # Academic collaboration
-├── src/                           # Source code (coming soon)
+├── CORE.md                        # Three irreducible axioms
+├── NON_GOALS.md                   # Four boundaries (what we refuse to become)
+├── STATUS.md                      # Current project phase
+├── docs/                          # Progressive documentation path
+│   ├── 00_Foundation/             # Philosophy & context
+│   ├── 01_Core_Architecture/      # System design
+│   ├── 02_System_Protocols/       # Operations
+│   ├── 03_Living_Meshes/          # Subsystems
+│   └── 04_Implementation/         # Building guides
+├── src/                           # Source code
 │   ├── ghoststack/               # Civic OS implementation
 │   ├── energy-coupler/           # Power routing protocols
 │   └── mesh/                     # Network stack
