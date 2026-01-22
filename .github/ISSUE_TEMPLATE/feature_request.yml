@@ -1,0 +1,122 @@
+name: Feature Request
+description: Suggest a new feature or enhancement
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a feature! Please describe what you'd like to see added or improved.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve?
+      placeholder: "I'm trying to [do something] but I can't because..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How should this work? Describe your ideal solution.
+      placeholder: "I would like the system to..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which part of the Sovereign Stack would this affect?
+      options:
+        - GhostStack (Civic OS)
+        - Energy Coupler
+        - Mesh Network
+        - SOV-HAB Hardware
+        - MLDT Sensors
+        - Water Systems
+        - Protocols
+        - Documentation
+        - Community Governance
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What other approaches could solve this problem?
+      placeholder: "I've also considered..."
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: How important is this feature?
+      options:
+        - Critical - Blocks core functionality
+        - High - Significantly improves usability
+        - Medium - Nice to have
+        - Low - Minor improvement
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Use Cases
+      description: Who would benefit and how?
+      placeholder: |
+        - Community builders could...
+        - Individuals could...
+        - Researchers could...
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation Ideas
+      description: (Optional) Technical approach or design considerations
+      placeholder: "This could be implemented by..."
+
+  - type: checkboxes
+    id: alignment
+    attributes:
+      label: Philosophical Alignment
+      description: Does this feature align with Sovereign Stack principles?
+      options:
+        - label: Supports flow over containment
+          required: false
+        - label: Enables replication over scaling
+          required: false
+        - label: Promotes sovereignty as active practice
+          required: false
+        - label: Serves community benefit over profit
+          required: false
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to help implement this feature
+          required: false
+        - label: I can provide testing or feedback
+          required: false
+        - label: I have funding to support development
+          required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission Checklist
+      options:
+        - label: I have searched existing issues to avoid duplicates
+          required: true
+        - label: This feature aligns with the project's mission
+          required: true
