@@ -134,13 +134,23 @@ This project is developed by **O1 Labs CIC**, a UK Community Interest Company op
 
 ### Licensing
 
-**Class A (Default): Open Non-Commercial**  
-Freely available for personal, educational, civic, or research use. Commercial exploitation prohibited without written consent.
+This project uses a **dual-license model**:
 
-**Class B: Controlled Commercial Use**  
-Commercial licensing requires approval from O1 Labs CIC Directors. All revenue reinvested into community purpose.
+**Class A (Default): AGPL-3.0 for Non-Commercial Use**
+- Licensed under GNU Affero General Public License v3.0 ([LICENSE](LICENSE))
+- Freely available for personal, educational, civic, research, and community use
+- Strong copyleft ensures improvements benefit the community
 
-See [LICENSE.md](LICENSE.md) for full terms.
+**Class B: Controlled Commercial Use**
+- Commercial manufacturing, services, or licensing requires written approval
+- Revenue sharing arrangements support ongoing development
+- All income reinvested per O1 Labs CIC's community benefit mandate
+
+**Quick guide:**
+- Building for yourself/community? → AGPL-3.0 (proceed freely)
+- Selling products/services? → Apply for Class B approval
+
+See [LICENSE.md](LICENSE.md) for detailed terms or [.github/LICENSE-FAQ.md](.github/LICENSE-FAQ.md) for common questions.
 
 ---
 
