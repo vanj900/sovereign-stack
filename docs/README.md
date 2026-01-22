@@ -2,6 +2,12 @@
 
 Comprehensive documentation for the Sovereign Stack project.
 
+## Essential Reading
+
+**Start here:** [CORE.md](../CORE.md) - The three irreducible axioms that define the Sovereign Stack's architecture and philosophy. Understanding these principles is essential for all other documentation.
+
+---
+
 ## Directory Structure
 
 ### `/technical`

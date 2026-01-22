@@ -10,10 +10,19 @@ The Sovereign Stack is a blueprint for building self-governing, resilient commun
 
 This is not a software platform, a housing project, or a political movement. It is all three—and more—unified by a core principle: **flow over containment**.
 
+**→ Read [CORE.md](CORE.md) for the irreducible axioms that define this system**
+
 ---
 
 ## Core Principles
 
+The Sovereign Stack is built on three architectural constraints (see [CORE.md](CORE.md) for details):
+
+1. **Flow Over Containment** - Resources circulate rather than accumulate
+2. **Sovereignty via Forkability** - Communities replicate horizontally, never centralize
+3. **Truth by Receipts** - Accountability through cryptographic proof, not authority
+
+**Key characteristics:**
 - **Energy flows peer-to-peer** without central grids
 - **Governance operates through small cells** (3-7 people) that fork instead of fight
 - **Physical infrastructure is mobile yet permanent** (SOV-HAB dwellings)
@@ -156,6 +165,8 @@ See [LICENSE.md](LICENSE.md) for detailed terms or [.github/LICENSE-FAQ.md](.git
 
 ## Philosophical Foundation
 
+**→ See [CORE.md](CORE.md) for the complete philosophical and architectural foundation**
+
 This project emerged from a specific context: years navigating institutional systems (courts, care homes, tribunals) that claimed to serve human welfare while systematically failing the humans within them.
 
 The pattern was consistent: **containment over flow**. Energy stored rather than circulated. Information hoarded rather than shared. Power accumulated rather than distributed.
@@ -165,6 +176,11 @@ The Sovereign Stack is a direct response. Not reform, but transcendence. Not vio
 This is **trauma-informed engineering**. Every subsystem is designed so no single point of failure—technical, political, or cognitive—can break the civilization.
 
 **"Revenge through creation."**
+
+The three irreducible axioms in [CORE.md](CORE.md) define what this system **must** be:
+1. **Flow Over Containment** - Stability through circulation, not accumulation
+2. **Sovereignty via Forkability** - Exit rights over enforced unity
+3. **Truth by Receipts** - Proof over authority
 
 ---
 
