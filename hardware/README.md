@@ -20,8 +20,8 @@ Complete designs for autonomous living units (12m x 3m x 3m shipping container c
 **Status:** Design phase
 **File Formats:** FreeCAD, DXF, PDF
 
-### `/mldt`
-**MLDT** - Minimum Livable Dwelling Threshold Calculator
+### `/habcal`
+**HabCal** - Habitability Calculator
 
 Hardware specifications and sensor systems for monitoring dwelling habitability.
 
@@ -34,6 +34,21 @@ Hardware specifications and sensor systems for monitoring dwelling habitability.
 
 **Status:** Specification phase
 **File Formats:** KiCAD (PCB), STL (enclosures)
+
+### `/mldt`
+**MLDT** - Magnetic Load-Distribution Tile System
+
+Passive magnetic levitation floor system for seismic protection and vibration isolation.
+
+**Contents:**
+- Complete technical specifications
+- Cassette module designs
+- Engineering calculations and load tables
+- Installation procedures
+- Safety and compliance documentation
+
+**Status:** Specification phase
+**File Formats:** Technical documentation (Markdown), CAD designs
 
 ### `/water`
 **Water Systems** - Water collection, treatment, and distribution
