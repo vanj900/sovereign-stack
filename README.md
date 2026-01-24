@@ -57,10 +57,22 @@ Protects human attention and agency through adaptive interfaces, therapeutic pro
 
 ## Physical Infrastructure
 
-### SOV-HAB: The Physical Node
+### Autonomous Node Platform
+A unified infrastructure system with shared subsystems and variant "skins" for different use cases. **Current focus: DOME-01 as proving ground.**
+
+### DOME-01: Autonomous Nutritional Infrastructure
+- **Status:** Phase 2 active design, specifications complete
+- **Form Factor:** Geodesic dome (Ø6.0m, height ≤2.45m)
+- **Legal Status:** UK Permitted Development compliant (outbuilding classification)
+- **Capacity:** 100% RDA nutrition for 3-4 people, 285-465 kg annual production
+- **Systems:** 3-7 kWp solar, 10-30 kWh battery, closed-loop water, vertical agriculture
+- **Cost:** £33,500-78,000 (Mode A/B)
+- **Documentation:** [hardware/autonomous-node/dome-01/](hardware/autonomous-node/dome-01/)
+
+### SOV-HAB: Autonomous Dwelling (Future Variant)
 - **Dimensions:** 10m × 2.55m transportable dwelling
 - **Legal Status:** Classified as caravan (avoids permanent planning requirements)
-- **Systems:** 1.2kW solar, 5kWh battery, rainwater harvesting, mesh node
+- **Systems:** Uses same core subsystems as DOME-01, adapted for habitation
 - **Autonomy:** 2-3 days independent operation
 - **Construction:** Timber frame with Magnetic Load Distribution Tiles (MLDT)
 
@@ -93,24 +105,31 @@ Both communities continue operating independently. No winners or losers.
 
 ## Project Status
 
-**Current Phase:** Design and Specification (Version 0.1)
+**Current Phase:** Phase 2 - Stabilization & First Cell Deployment
 
-### Completed
-✅ Architectural overview and system design  
-✅ Core philosophy and governance model  
-✅ Technical specifications for key subsystems  
-✅ Legal compliance framework (UK focus)  
+**→ See [STATUS.md](STATUS.md) for complete phase breakdown**
 
-### In Progress
-🔄 SOV-HAB engineering blueprints  
-🔄 Energy Coupler protocol implementation  
-🔄 GhostStack MVP development  
-🔄 MLDT prototype testing  
+### Phase 1: Complete ✅
+✅ GhostStack (Civic OS) - Core governance architecture
+✅ SOV-HAB Specifications - Mobile dwelling technical design
+✅ GhostBrain (AI Advisor) - NVEP protocol implementation
+✅ Defense Protocols - Non-lethal perimeter systems
 
-### Upcoming
-⏳ First SOV-HAB construction (Phase 1)  
-⏳ Mesh network deployment  
-⏳ Community recruitment and training  
+### Phase 2: Active 🔄
+**DOME-01 (Autonomous Nutritional Infrastructure)**
+- ✅ Technical specifications complete ([specifications.md](hardware/autonomous-node/dome-01/specifications.md))
+- ✅ Bill of materials finalized
+- 🔄 Demonstration unit construction (pending)
+- 🔄 Field testing and iteration
+
+**Energy Coupler Protocol**
+- 🔄 Mesh-routed power sharing implementation
+- 🔄 Reciprocity ledger development
+
+### Phase 3: Upcoming ⏳
+⏳ First Cell Deployment (3-7 nodes)
+⏳ Cross-node energy sharing validation
+⏳ Governance receipt system testing
 ⏳ Fork protocol validation  
 
 ---
@@ -129,7 +148,10 @@ Both communities continue operating independently. No winners or losers.
 ## Getting Involved
 
 ### For Builders
-Interested in constructing SOV-HABs or deploying mesh infrastructure? See [Builder's Handbook](docs/builders/getting-started.md).
+Interested in constructing DOME-01, SOV-HABs, or deploying mesh infrastructure?
+- **Start here:** [Autonomous Node Platform](hardware/autonomous-node/README.md) - Unified hardware architecture
+- **DOME-01 specs:** [dome-01/specifications.md](hardware/autonomous-node/dome-01/specifications.md) - Ready for CAD conversion
+- **Builder's Handbook:** [docs/builders/getting-started.md](docs/builders/getting-started.md)
 
 ### For Developers
 Want to contribute to GhostStack, Energy Coupler, or mesh protocols? Check [Development Guide](docs/development/contributing.md).
@@ -191,26 +213,31 @@ The three irreducible axioms in [CORE.md](CORE.md) define what this system **mus
 
 ## Roadmap
 
-### Phase 1: Walking Skeleton (Months 1-6)
-- First SOV-HAB constructed and occupied
-- Basic energy/water autonomy demonstrated
-- Single-node mesh operational
+**→ See [STATUS.md](STATUS.md) for complete project timeline**
 
-### Phase 2: First Cell (Months 6-12)
-- 3-7 SOV-HABs deployed
-- Peer-to-peer energy sharing tested
+### Phase 1: Architecture ✅ Complete
+- GhostStack (Civic OS) architecture finalized
+- SOV-HAB technical specifications complete
+- GhostBrain (AI Advisor) with NVEP protocol
+- Defense protocols documented
+
+### Phase 2: Stabilization & First Build 🔄 Active
+- **DOME-01** demonstration unit construction
+- Field testing and iteration
+- Energy Coupler protocol implementation
+- Documentation refinement
+
+### Phase 3: First Cell Deployment ⏳ Upcoming
+- 3-7 nodes deployed (DOME-01 + future SOV-HABs)
+- Peer-to-peer energy sharing validated
 - Multi-node governance via GhostStack
-- First intentional fork validated
+- First intentional fork tested
 
-### Phase 3: Regenerative Systems (Months 12-24)
-- Agriculture producing 30% of food
-- Health and learning meshes operational
-- First external revenue generated
-
-### Phase 4: Replication (Months 24-36)
+### Phase 4: Replication ⏳ Future
 - Second independent cell launched
-- Complete documentation published
+- Complete build documentation published
 - External builders adopt blueprints
+- Regenerative systems scaling
 
 ---
 
@@ -267,9 +294,10 @@ sovereign-stack/
 │   ├── energy-coupler/           # Power routing protocols
 │   └── mesh/                     # Network stack
 ├── hardware/                      # Physical designs
-│   ├── sov-hab/                  # Dwelling blueprints
-│   ├── mldt/                     # Magnetic tile specs
-│   └── water/                    # Treatment system designs
+│   └── autonomous-node/          # Unified platform (shared subsystems)
+│       ├── dome-01/              # Food production variant (Phase 2 active)
+│       │   └── specifications.md # Complete technical spec
+│       └── sov-hab/              # Dwelling variant (future)
 ├── protocols/                     # Governance and operational protocols
 ├── LICENSE.md                     # Class A/B licensing terms
 └── README.md                      # This file
