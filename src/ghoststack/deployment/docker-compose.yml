@@ -1,0 +1,76 @@
+version: "3.9"
+
+services:
+  # Node 1 — primary governance node
+  gov-node-1:
+    build:
+      context: ../../../
+      dockerfile: src/ghoststack/deployment/Dockerfile
+    container_name: gov-node-1
+    environment:
+      GOV_DATABASE_URL: sqlite:////data/governance.db
+      GOV_API_HOST: "0.0.0.0"
+      GOV_API_PORT: "8000"
+      GOV_QUORUM: "0.5"
+      GOV_LOG_LEVEL: INFO
+    volumes:
+      - gov-node-1-data:/data
+    ports:
+      - "8001:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  # Node 2 — secondary governance node
+  gov-node-2:
+    build:
+      context: ../../../
+      dockerfile: src/ghoststack/deployment/Dockerfile
+    container_name: gov-node-2
+    environment:
+      GOV_DATABASE_URL: sqlite:////data/governance.db
+      GOV_API_HOST: "0.0.0.0"
+      GOV_API_PORT: "8000"
+      GOV_QUORUM: "0.5"
+      GOV_LOG_LEVEL: INFO
+    volumes:
+      - gov-node-2-data:/data
+    ports:
+      - "8002:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  # Node 3 — tertiary governance node
+  gov-node-3:
+    build:
+      context: ../../../
+      dockerfile: src/ghoststack/deployment/Dockerfile
+    container_name: gov-node-3
+    environment:
+      GOV_DATABASE_URL: sqlite:////data/governance.db
+      GOV_API_HOST: "0.0.0.0"
+      GOV_API_PORT: "8000"
+      GOV_QUORUM: "0.5"
+      GOV_LOG_LEVEL: INFO
+    volumes:
+      - gov-node-3-data:/data
+    ports:
+      - "8003:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+volumes:
+  gov-node-1-data:
+  gov-node-2-data:
+  gov-node-3-data:

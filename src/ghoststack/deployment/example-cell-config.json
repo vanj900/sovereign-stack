@@ -1,0 +1,36 @@
+{
+  "cell_id": "cell-01",
+  "cell_name": "SOV-HAB Alpha Cell",
+  "governance": {
+    "quorum": 0.5,
+    "db_url": "sqlite:////data/governance.db",
+    "api_host": "0.0.0.0",
+    "api_port": 8000,
+    "log_level": "INFO"
+  },
+  "reputation": {
+    "damping": 0.85,
+    "iterations": 20,
+    "decay_half_life_days": 30
+  },
+  "incentive": {
+    "initial_balance": 100
+  },
+  "nodes": [
+    {
+      "id": "node-alice",
+      "role": "proposer",
+      "did": "did:sov:alice"
+    },
+    {
+      "id": "node-bob",
+      "role": "relay",
+      "did": "did:sov:bob"
+    },
+    {
+      "id": "node-carol",
+      "role": "validator",
+      "did": "did:sov:carol"
+    }
+  ]
+}
