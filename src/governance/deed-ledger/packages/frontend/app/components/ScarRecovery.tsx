@@ -12,7 +12,6 @@ type ScarredDeed = {
   id: string;
   description: string;
   createdAt: string;
-  scarNote?: string;
   recoveryStatus?: RecoveryStatus;
   recoveryId?: string;
 };
@@ -38,7 +37,6 @@ export default function ScarRecovery() {
               id
               description
               createdAt
-              scarNote
             }
           }
         }
@@ -135,9 +133,6 @@ export default function ScarRecovery() {
             </div>
 
             <p className="text-white mb-2">{deed.description}</p>
-            {deed.scarNote && (
-              <p className="text-red-300 text-sm mb-4">Scar note: {deed.scarNote}</p>
-            )}
 
             {deed.recoveryStatus === 'pending' && (
               <div className="bg-amber-950 border border-amber-700 px-4 py-3 rounded-lg text-amber-300 text-sm">
