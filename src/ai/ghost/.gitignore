@@ -1,0 +1,29 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Runtime logs
+*.log
+
+# Ghost's RAM files (never committed — they live and die with the process)
+/dev/shm/ghost_*.db
+/dev/shm/ghost_*.json
+ghost_model_*.json
+ghost_memory_*.db
+
+# Named pipe (auto-created on start)
+/tmp/ghost.pipe
+
+# Python build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
+.pytest_cache/

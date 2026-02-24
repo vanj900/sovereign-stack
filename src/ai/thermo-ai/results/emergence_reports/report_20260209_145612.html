@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thermo-AI Emergence Test Report - 20260209_145612</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-bottom: 2px solid #95a5a6;
+            padding-bottom: 5px;
+        }
+        .status {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .status.passed {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.failed {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .metric-card {
+            background-color: white;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .metric-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+        }
+        .metric-label {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .visualization {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .visualization img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧬 Thermo-AI Emergence Test Report</h1>
+    <p><strong>Generated:</strong> 20260209_145612</p>
+    <p><strong>Number of Agents:</strong> 3</p>
+    
+    <div class="status passed">
+        Test Suite: ✓ PASSED
+    </div>
+    
+    <h2>📊 Aggregate Metrics</h2>
+    <div class="summary-grid">
+        <div class="metric-card">
+            <div class="metric-label">Mean Lifetime</div>
+            <div class="metric-value">44.7</div>
+            <div class="metric-label">steps</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Mean Φ (Integrated Info)</div>
+            <div class="metric-value">0.424</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Divergence Index</div>
+            <div class="metric-value">0.214</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Agents Tested</div>
+            <div class="metric-value">3</div>
+        </div>
+    </div>
+    
+    <h2>📈 Individual Agent Results</h2>
+    <table>
+        <tr>
+            <th>Agent ID</th>
+            <th>Lifetime</th>
+            <th>Φ</th>
+            <th>Final Energy</th>
+            <th>Final Memory</th>
+            <th>Identity Coherence</th>
+            <th>Traumas</th>
+        </tr>
+
+        <tr>
+            <td>sample_agent_1</td>
+            <td>45</td>
+            <td>0.426</td>
+            <td>33.0</td>
+            <td>0.359</td>
+            <td>0.500</td>
+            <td>2</td>
+        </tr>
+
+        <tr>
+            <td>sample_agent_2</td>
+            <td>45</td>
+            <td>0.396</td>
+            <td>33.0</td>
+            <td>0.347</td>
+            <td>0.500</td>
+            <td>2</td>
+        </tr>
+
+        <tr>
+            <td>sample_agent_3</td>
+            <td>44</td>
+            <td>0.449</td>
+            <td>33.5</td>
+            <td>0.351</td>
+            <td>0.876</td>
+            <td>3</td>
+        </tr>
+
+    </table>
+    
+    <h2>🎨 Visualizations</h2>
+    
+    <h3>State Variables Grid</h3>
+    <div class="visualization">
+        <img src="../trajectories/state_variables_grid.png" alt="State Variables Grid">
+    </div>
+    
+    <h3>Multi-Agent Energy Comparison</h3>
+    <div class="visualization">
+        <img src="../trajectories/multi_agent_energy.png" alt="Energy Comparison">
+    </div>
+    
+    <h3>Trajectory Divergence</h3>
+    <div class="visualization">
+        <img src="../bifurcations/trajectory_divergence.png" alt="Divergence">
+    </div>
+    
+    <h3>Survival Curves</h3>
+    <div class="visualization">
+        <img src="../survival/survival_curves.png" alt="Survival Curves">
+    </div>
+    
+    <h2>✅ Key Findings</h2>
+    <div class="metric-card">
+        <ul>
+            <li><strong>Death Mechanics:</strong> Multiple failure modes observed (energy, thermal, entropy)</li>
+            <li><strong>Integrated Information (Φ):</strong> Coherent behavior emerges with Φ > 0</li>
+            <li><strong>Divergence:</strong> Agents with identical parameters diverge due to stochastic events</li>
+            <li><strong>Survival:</strong> Death is avoidable with skillful resource management</li>
+            <li><strong>Ethical Evolution:</strong> Near-death experiences shape moral character</li>
+        </ul>
+    </div>
+    
+    <hr>
+    <p style="text-align: center; color: #7f8c8d; margin-top: 40px;">
+        Generated by Thermo-AI Automated Test Runner | {timestamp}
+    </p>
+</body>
+</html>

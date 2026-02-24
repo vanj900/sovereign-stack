@@ -1,0 +1,24 @@
+{
+  "name": "deed-ledger",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Portable deed-based reputation ledger on Ceramic + Nostr",
+  "scripts": {
+    "dev": "pnpm --filter frontend dev",
+    "build": "pnpm -r build",
+    "deploy:models": "tsx scripts/deploy-models.ts",
+    "lint": "pnpm -r lint",
+    "type-check": "pnpm -r type-check"
+  },
+  "devDependencies": {
+    "@composedb/client": "^0.6.1",
+    "@composedb/devtools": "^0.6.1",
+    "@composedb/devtools-node": "^0.6.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

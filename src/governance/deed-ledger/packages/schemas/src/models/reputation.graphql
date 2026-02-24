@@ -1,0 +1,54 @@
+# ComposeDB GraphQL schema for Ceramic reputation system
+# This defines the core data models for deed-based reputation tracking
+
+type Deed @createModel(accountRelation: LIST) {
+  id: ID!
+  controller: DID! @immutable
+  createdAt: DateTime!
+  type: String! @immutable  # "deed_completed", "vouch", "dispute", etc.
+  description: String
+  counterparty: DID
+  signatures: [Signature!]
+  linkedEventId: StreamID
+  nicheTags: [String!]
+}
+
+type Signature {
+  signer: DID!
+  timestamp: DateTime!
+  verification: String
+}
+
+type Scar {
+  deedId: StreamID!
+  scarNote: String!
+  scarverDID: DID!
+  createdAt: DateTime!
+}
+
+type RecoveryDeed @createModel(accountRelation: LIST) {
+  deedId: StreamID! @immutable   # StreamID of the scarred Deed
+  controller: DID! @immutable
+  createdAt: DateTime!
+  recoveryNote: String!
+  recovererDID: DID! @immutable
+  status: String                 # "pending", "approved", "rejected"
+  reviewedAt: DateTime
+  reviewerDID: DID
+}
+
+type UserReputation @createModel(accountRelation: SINGLE) {
+  controller: DID! @immutable
+  deedCount: Int!
+  totalScore: Float!
+  nicheTags: [NicheTag!]
+  observers: [DID!]
+  status: String # "invite_pending", "signal_sent", "observer", "node"
+  joinedAt: DateTime!
+}
+
+type NicheTag {
+  tag: String!
+  score: Float!
+  deedIds: [StreamID!]
+}

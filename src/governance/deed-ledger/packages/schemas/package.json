@@ -1,0 +1,15 @@
+{
+  "name": "@deed-ledger/schemas",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "ComposeDB GraphQL models for Ceramic reputation schema",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

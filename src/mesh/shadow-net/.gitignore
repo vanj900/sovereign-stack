@@ -1,0 +1,29 @@
+# Ignore RAM-resident directories
+*.tmp
+*.temp
+
+# Ignore temporary files
+*~
+*.bak
+*.swp
+
+# Ignore GPG files
+*.gpg
+
+# Ignore logs
+*.log
+
+# Ignore IDE files
+*.idea/
+*.vscode/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Bio-Digital Organism outputs
+narratives/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
