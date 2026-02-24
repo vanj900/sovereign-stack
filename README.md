@@ -1,8 +1,23 @@
-# Sovereign Stack
+# Sovereign OS — Unified Monorepo
 
-**Autonomous infrastructure for small, sovereign communities.**
+**One repository. Every layer of the sovereign civilization stack.**
 
-The Sovereign Stack is an open-source design system for building self-sufficient communities: portable habitats, peer-to-peer energy sharing, decentralised governance, and a mesh communication layer that works without the internet. It is built on three irreducible principles—Flow Over Containment, Sovereignty via Forkability, and Truth by Receipts—that are architectural constraints, not aspirations.
+This is the single unified home of the **Sovereign OS**: the complete, forkable blueprint for small sovereign communities to control their own energy, water, food, governance, AI, and communication — with no dependency on centralised institutions.
+
+The monorepo integrates all layers:
+
+| Layer | Path | What it is |
+|-------|------|------------|
+| **Governance / Integrity Chain** | `src/governance/deed-ledger` | GhostStack civic OS — deed ledger, scars, demurrage, portable exit, Nostr broadcast |
+| **AI Advisor** | `src/ai/ghost` | Ghost daemon — ephemeral RAM-based AI with deed posting bridge |
+| **Thermodynamic AI** | `src/ai/thermo-ai` | Bio-digital organism under real metabolic constraints |
+| **Mesh** | `src/mesh/shadow-net` | Peer-to-peer routing without ISP or internet |
+| **Psych / Integrity** | `src/psych/precisionlocked` | Cognitive integrity and pattern analysis |
+| **Audit Tools** | `src/tools/red-flag-auditor` | Red-flag detection and governance auditing |
+
+See [docs/INTEGRATION.md](docs/INTEGRATION.md) for the full 5-layer architecture map, the deed-ledger ↔ Ghost bridge design, and wiring notes.
+
+It is built on three irreducible principles—Flow Over Containment, Sovereignty via Forkability, and Truth by Receipts—that are architectural constraints, not aspirations. See [CORE.md](CORE.md).
 
 > ⚠️ **Design Phase** — Core systems are specified and Phase 1 is complete. This is not yet production-ready. Do not begin construction without reading the current [STATUS.md](STATUS.md) and consulting local professionals.
 

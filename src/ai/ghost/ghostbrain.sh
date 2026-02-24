@@ -27,6 +27,8 @@ GHOST_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 [[ -f "$GHOST_ROOT/ghostadapt.sh" ]]   && source "$GHOST_ROOT/ghostadapt.sh"
 # shellcheck source=ghoststate.sh
 [[ -f "$GHOST_ROOT/ghoststate.sh" ]]   && source "$GHOST_ROOT/ghoststate.sh"
+# shellcheck source=ghostdeed.sh
+[[ -f "$GHOST_ROOT/ghostdeed.sh" ]]    && source "$GHOST_ROOT/ghostdeed.sh"
 
 # ── Timing config (override via env) ─────────────────────────────────────────
 GHOST_PULSE="${GHOST_PULSE:-5}"            # seconds per cycle
@@ -100,6 +102,7 @@ _ghost_suspend() {
   # Clean up RAM files
   declare -f ghost_memory_cleanup &>/dev/null && ghost_memory_cleanup
   declare -f ghost_adapt_cleanup  &>/dev/null && ghost_adapt_cleanup
+  declare -f ghost_deed_cleanup   &>/dev/null && ghost_deed_cleanup
 
   printf '%b[ghostbrain] Gone. (For now.)%b\n' '\033[36m' '\033[0m'
 }
@@ -184,9 +187,10 @@ _ghost_loop() {
       declare -f ghost_dream_cycle &>/dev/null && ghost_dream_cycle >/dev/null 2>&1 || true
     fi
 
-    # Every 15 cycles: adapt (also updates mask + stage)
+    # Every 15 cycles: adapt (also updates mask + stage), then post a deed receipt
     if (( GHOST_CYCLES % GHOST_ADAPT_EVERY == 0 )); then
-      declare -f ghost_adapt &>/dev/null && ghost_adapt >/dev/null 2>&1 || true
+      declare -f ghost_adapt     &>/dev/null && ghost_adapt     >/dev/null 2>&1 || true
+      declare -f ghost_deed_post &>/dev/null && ghost_deed_post >/dev/null 2>&1 || true
     fi
 
     # Every 2 cycles: render the HUD
