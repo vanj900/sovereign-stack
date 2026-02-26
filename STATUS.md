@@ -1,7 +1,7 @@
 # STATUS.md
 
 **Project Status:** Phase 2 - Stabilization & First Cell Deployment
-**Last Updated:** January 22, 2026
+**Last Updated:** February 24, 2026
 **Maintained By:** O1 Labs CIC
 
 ---
@@ -109,7 +109,39 @@ The Sovereign Stack is **not "just starting"**. Core systems are complete and va
 ## Phase 2: Stabilization & First Cell (Current ⏳)
 
 **Timeline:** Months 6-12
-**Status:** In progress
+**Status:** MVP governance core stabilized — docs overhauled
+
+---
+
+### ✅ Feb 22–24 Sprint: Sovereign OS Unification (Complete)
+
+**What shipped:**
+
+- **Scars schema cleanup** — `reputation.graphql` and `types.ts` in
+  `src/governance/deed-ledger/packages/schemas/` clarified.  `Scar` now
+  carries a mandatory `@createModel` decorator consistent with `Deed` and
+  `RecoveryDeed`; TypeScript types aligned to match.
+
+- **GhostStack tutorial & quick-start** — `docs/TUTORIAL.md` and
+  `docs/QUICKSTART.md` written from scratch: five runnable example scripts
+  (Layer 1 messaging → Layer 2 governance → Layer 3 brain simulation →
+  GhostAgent bridge → two-agent demo), full expected-output copy-paste
+  blocks, and a hardening roadmap.
+
+- **Full Sovereign OS integration map** — `docs/INTEGRATION.md` documents
+  the 5-layer architecture, the `deed-ledger` ↔ GhostStack Integrity Chain
+  equivalence, the Ghost → deed bridge (`ghostdeed.sh`), and the three next
+  concrete wiring tasks (Nostr signing, deed-ledger ingest endpoint, EventLog
+  Ghost deed display).
+
+- **New reference documents added to `docs/`:**
+  - `docs/INTEGRATION.md` — architecture + wiring map
+  - `docs/QUICKSTART.md` — five-command quick-start
+  - `docs/TUTORIAL.md` — step-by-step guide (zero to running in < 1 h)
+
+**Blockers cleared:** None — all three documents are live and cross-linked.
+
+---
 
 ### ⏳ First Cell Deployment (3-7 Nodes)
 
