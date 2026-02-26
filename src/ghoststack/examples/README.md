@@ -16,6 +16,8 @@ optional for plots in Layer 3).
 | [`03_layer3_brain.py`](03_layer3_brain.py) | 3 | Cognitive loop: stimulus → emotion → action → memory |
 | [`04_bridge_agent.py`](04_bridge_agent.py) | Bridge | Single GhostAgent combining all three layers |
 | [`05_multi_agent_demo.py`](05_multi_agent_demo.py) | Full | Two agents, offline sync, multi-agent governance |
+| [`06_three_node_cell.py`](06_three_node_cell.py) | Cell | 3-node Cell (alice, bob, carol): offline sync, governance, deed-ledger scars/receipts, asymmetric reputation |
+| [`test_tutorial.py`](test_tutorial.py) | Tests | 42 automated tests covering all layers, the bridge, multi-agent, 3-node Cell, and deed-ledger scar/receipt lifecycle |
 
 ---
 
@@ -30,6 +32,10 @@ python 02_layer2_governance.py
 python 03_layer3_brain.py
 python 04_bridge_agent.py
 python 05_multi_agent_demo.py
+python 06_three_node_cell.py
+
+# Run the automated test suite (standard library only, no extra deps)
+python test_tutorial.py
 ```
 
 Each script prints annotated output so you can follow every step.
@@ -73,6 +79,26 @@ Full multi-agent scenario:
 - Bob comes online; sync delivers
 - Both vote on a joint governance proposal
 - Reputation scores and incentive balances are printed
+
+### `06_three_node_cell.py`
+Full 3-node Cell simulation (alice, bob, carol):
+- Offline → online sync across three independent queues
+- Three governance proposals (unanimous PASS, majority PASS, minority FAIL)
+- `DeedLedger` — in-memory analogue of the deed-ledger Ceramic model:
+  - PASSED proposals → *receipts* appended to a hash chain
+  - FAILED proposals → *scars* appended to the hash chain
+  - Scar *recovery*: owner submits recovery note; observer approves
+  - `verify_chain()` validates hash linkage across all blocks
+- Asymmetric PageRank: carol receives highest endorsement weight → highest reputation score
+
+### `test_tutorial.py`
+Automated test suite (42 tests, standard library only):
+- Layer 1: queue, daemon, offline/online delivery
+- Layer 2: DIDs, governance, hash-chain receipts, reputation, incentives
+- Layer 3: brain simulation, state persistence
+- Bridge: single `GhostAgent`
+- Multi-agent: two-agent offline/online + joint governance
+- 3-node Cell: `DeedLedger` receipts, scars, recovery lifecycle, chain integrity
 
 ---
 
