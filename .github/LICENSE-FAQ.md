@@ -19,7 +19,7 @@ The Sovereign Stack exists to serve **autonomous communities**, not extractive p
 3. **Controls commercialization** (Class B approval process)
 4. **Funds ongoing development** (Class B revenue sharing)
 
-This structure aligns with O1 Labs CIC's mission as a Community Interest Company with a statutory asset lock.
+This structure aligns with vanj900's dual-license model.
 
 ---
 
@@ -105,14 +105,13 @@ You need Class B approval if you're:
 
 ### How do I apply for Class B?
 
-1. **Email:** licensing@o1labs.community
-2. **Subject:** "Class B License Application - [Your Organization]"
-3. **Include:**
+Contact vanj900 directly on GitHub: https://github.com/vanj900
+
+Include:
    - Legal entity details (company name, registration, jurisdiction)
    - Intended use case (what you're building/selling)
    - Revenue model (how you'll make money)
    - Community benefit (how this advances Sovereign Stack goals)
-   - Pricing proposal (if applicable)
 
 ### What are the terms?
 
@@ -123,18 +122,18 @@ Class B licenses typically include:
 - **Waived fees:** Possible for exceptional community benefit
 - **Revocation clauses:** If terms are violated or use becomes harmful
 
-All Class B revenue is reinvested in Sovereign Stack development per O1 Labs CIC's asset lock.
+All Class B revenue is reinvested in Sovereign Stack development per vanj900's licensing terms.
 
 ### Can my application be denied?
 
-**Yes.** O1 Labs CIC evaluates applications against:
+**Yes.** vanj900 evaluates applications against:
 
 - **Alignment with principles** (flow over containment, community sovereignty)
 - **Risk of harm** (surveillance, coercion, centralized control)
 - **Community benefit** (does commercialization help or hinder adoption?)
 - **Resource capacity** (can we support this use case?)
 
-We prioritize community benefit over profit maximization.
+vanj900 prioritizes community benefit over profit maximization.
 
 ---
 
@@ -191,16 +190,15 @@ We prioritize community benefit over profit maximization.
 
 ## Trademark Usage
 
-The following terms are **trademarks of O1 Labs CIC:**
+The following terms are **trademarks of vanj900:**
 - Sovereign Stack™
 - SOV-HAB™
 - GhostStack™
-- O1 Labs™
 
 ### Allowed without permission (Class A):
 ✅ "Built using Sovereign Stack technology"
 ✅ "Compatible with GhostStack protocol"
-✅ "Based on SOV-HAB designs by O1 Labs CIC"
+✅ "Based on SOV-HAB designs by vanj900"
 
 ### Requires written permission (Class B):
 ❌ "Sovereign Stack Certified Builder"
@@ -234,7 +232,7 @@ The AGPL-3.0 `LICENSE` file satisfies GitHub's license detection for the open-so
 By contributing (pull requests, issues, designs, documentation), you agree:
 
 1. **License grant:** Your contributions are licensed under AGPL-3.0 (Class A) + Class B terms
-2. **Copyright:** You retain copyright but grant O1 Labs CIC perpetual rights to use/sublicense
+2. **Copyright:** You retain copyright but grant vanj900 perpetual rights to use/sublicense
 3. **Patent grant:** Royalty-free patent license for any patents covering your contributions
 4. **Warranty:** You have the right to contribute (not violating employer IP, etc.)
 
@@ -245,14 +243,14 @@ See `CONTRIBUTING.md` for detailed contribution guidelines.
 ## Still Confused?
 
 ### General questions
-**Email:** hello@o1labs.community
-**Docs:** https://sovereign-stack.org/docs/licensing (coming soon)
+**GitHub:** https://github.com/vanj900
+**Docs:** https://github.com/vanj900/sovereign-stack
 
 ### Class B licensing inquiries
-**Email:** licensing@o1labs.community
+Contact vanj900 directly on **GitHub:** https://github.com/vanj900
 
 ### Report license violations
-**Email:** legal@o1labs.community
+**GitHub Issues:** https://github.com/vanj900/sovereign-stack/issues
 
 ### Quick decision flowchart
 
@@ -284,4 +282,4 @@ This structure ensures Sovereign Stack remains a **community resource**, not a *
 
 **Last Updated:** January 22, 2026
 **License Version:** Sovereign Stack Dual License v1.0
-**Maintained By:** O1 Labs CIC
+**Maintained By:** vanj900

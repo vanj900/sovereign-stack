@@ -167,7 +167,7 @@ This section is intentionally **stable**. The core principles are designed to be
 Changes to foundational documents require:
 - Demonstration that existing principles are insufficient
 - Proof that changes don't enable predictable failure modes
-- Approval from O1 Labs CIC Directors
+- Approval from vanj900 Directors
 - 90-day community discussion period
 
 **However**, you can contribute:
@@ -193,4 +193,4 @@ Once you understand the philosophical foundation:
 
 *"Flow over containment. Replication over scaling. Sovereignty as verb, not noun."*
 
-**Maintained By:** O1 Labs CIC
+**Maintained By:** vanj900

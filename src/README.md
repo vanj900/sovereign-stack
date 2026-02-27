@@ -135,7 +135,7 @@ See [CONTRIBUTING.md](../CONTRIBUTING.md) for:
 - Security review process
 - Contributor License Agreement
 
-By contributing, you agree to dual-license your code under AGPL-3.0 (Class A) and O1 Labs CIC's commercial terms (Class B).
+By contributing, you agree to dual-license your code under AGPL-3.0 (Class A) and vanj900's commercial terms (Class B).
 
 ---
 
@@ -158,7 +158,7 @@ By contributing, you agree to dual-license your code under AGPL-3.0 (Class A) an
 
 ## Security
 
-Report security vulnerabilities to: security@o1labs.community
+Report security vulnerabilities to: https://github.com/vanj900/sovereign-stack/issues
 
 **Do not** open public issues for security vulnerabilities.
 
@@ -168,4 +168,4 @@ Report security vulnerabilities to: security@o1labs.community
 
 - **Technical discussions:** Open an issue with `[Discussion]` tag
 - **Architecture decisions:** See `/docs/technical/adr/` (Architecture Decision Records)
-- **General questions:** hello@o1labs.community
+- **General questions:** https://github.com/vanj900

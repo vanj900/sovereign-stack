@@ -281,9 +281,9 @@ Before deploying protocols in production:
 ## Questions?
 
 - **Protocol design discussions:** Open an issue with `[Protocol]` tag
-- **Implementation questions:** hello@o1labs.community
-- **Security concerns:** security@o1labs.community
-- **Interoperability issues:** protocols@o1labs.community
+- **Implementation questions:** https://github.com/vanj900
+- **Security concerns:** https://github.com/vanj900/sovereign-stack/issues
+- **Interoperability issues:** https://github.com/vanj900
 
 ---
 

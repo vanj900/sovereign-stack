@@ -146,4 +146,4 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for guidelines.
 
 *"Flow over containment. Replication over scaling. Sovereignty as verb, not noun."*
 
-**Maintained By:** O1 Labs CIC
+**Maintained By:** vanj900

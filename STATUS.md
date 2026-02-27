@@ -2,7 +2,7 @@
 
 **Project Status:** Phase 2 - Stabilization & First Cell Deployment
 **Last Updated:** February 24, 2026
-**Maintained By:** O1 Labs CIC
+**Maintained By:** vanj900
 
 ---
 
@@ -297,7 +297,7 @@ The Sovereign Stack is **not "just starting"**. Core systems are complete and va
 - Zero central coordination required
 - Forks maintain interoperability where desired
 - Failures remain local (no cascading collapse)
-- New cells emerge without approval from O1 Labs CIC
+- New cells emerge without approval from vanj900
 
 ---
 
@@ -366,7 +366,7 @@ The Sovereign Stack is **not "just starting"**. Core systems are complete and va
 
 ## Communication Channels
 
-- **General inquiries:** hello@o1labs.community
+- **General inquiries:** https://github.com/vanj900
 - **Technical discussions:** GitHub Discussions
 - **Contribution coordination:** See [CONTRIBUTING.md](CONTRIBUTING.md)
 - **Status updates:** Follow GitHub commits and releases
@@ -384,5 +384,5 @@ The Sovereign Stack is **not "just starting"**. Core systems are complete and va
 
 *"Flow over containment. Replication over scaling. Sovereignty as verb, not noun."*
 
-**Maintained By:** O1 Labs CIC
+**Maintained By:** vanj900
 **License:** See [LICENSE.md](LICENSE.md)

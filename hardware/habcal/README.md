@@ -420,7 +420,7 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for contribution workflow.
 **Firmware/Software:** AGPL-3.0
 **Documentation:** CC BY-SA 4.0
 
-Commercial manufacturing or services require Class B approval from O1 Labs CIC.
+Commercial manufacturing or services require Class B approval from vanj900.
 
 See [LICENSE.md](../../LICENSE.md) for complete terms.
 
@@ -445,8 +445,8 @@ See [LICENSE.md](../../LICENSE.md) for complete terms.
 
 ## Contact
 
-**Technical Questions:** hardware@o1labs.community
-**Build Support:** builders@o1labs.community
+**Technical Questions:** https://github.com/vanj900
+**Build Support:** https://github.com/vanj900
 **Bug Reports:** Open an issue with `[HabCal]` tag
 
 ---

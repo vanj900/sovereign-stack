@@ -367,10 +367,10 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for:
 
 ## License
 
-This platform design is released under O1 Labs CIC's dual-license model:
+This platform design is released under vanj900's dual-license model:
 
 **Class A (AGPL-3.0):** Free for personal, educational, research, and civic use.
-**Class B (Commercial):** Contact licensing@o1labs.org for commercial deployment.
+**Class B (Commercial):** Contact https://github.com/vanj900 for commercial deployment.
 
 See [LICENSE.md](../../LICENSE.md) for full terms.
 

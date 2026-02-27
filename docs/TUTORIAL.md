@@ -597,4 +597,4 @@ For protocol specifications see [protocols/README.md](../protocols/README.md).
 
 *"Flow over containment. Replication over scaling. Sovereignty as verb, not noun."*
 
-**Maintained by:** O1 Labs CIC | **License:** AGPL-3.0
+**Maintained by:** vanj900 | **License:** AGPL-3.0
