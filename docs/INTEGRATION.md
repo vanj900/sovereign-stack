@@ -144,11 +144,55 @@ fi
 
 ---
 
-## Next Wiring Tasks (one evening each)
+## 4. Shadow-Net LoRa Bridge
 
-These are the three smallest concrete code changes to make the Ghost → deed pipeline real end-to-end.
+`src/mesh/shadow-net/bridge/` is the **Layer 2 LoRa mesh transport** for the
+Sovereign Stack.  It bridges Meshtastic hardware to the deed-ledger Integrity
+Chain so off-grid nodes can participate in governance without any internet
+connection.
 
-### Task 1 — Nostr signing in `ghostdeed.sh` (~1 h)
+### How it connects to the three previous tasks
+
+| Previous task | Connection |
+|--------------|------------|
+| **✅ Task 1 — Nostr signing** (`ghostdeed.sh`) | `DeedMeshBridge._sign_payload()` uses the same key path (`private_key_path` in `config.yaml`).  Signed deeds from the mesh are broadcast to the same Nostr relay. |
+| **✅ Task 2 — deed-ledger ingest endpoint** | Every received mesh packet is converted to a `Deed` and POSTed to `deed_ingest_url` (`POST /ghost-deed` or `/api/deeds/ingest`). |
+| **✅ Task 3 — EventLog Ghost deeds** | Receipts emitted by `_broadcast_receipt()` carry `kind: 30023` tags compatible with the `EventLog.tsx` filter — they appear alongside Ghost adapt receipts in the governance dashboard. |
+
+### Data flow
+
+```
+Mesh node → DeedMeshBridge.on_mesh_receive()
+              ↓ verify sig
+              ↓ _packet_to_deed()     ← same Deed schema as deed-ledger
+              ↓ _post_deed()          ← Task 2 ingest endpoint
+              ↓ _broadcast_receipt()  ← Nostr kind 30023 (Task 1 signing)
+              ↓ EventLog display      ← Task 3 subscription filter
+```
+
+### GhostAgent hook
+
+```python
+# In src/ghost/dual/ghost_dual_daemon.py (slow_loop):
+from shadow_net.bridge import DeedMeshBridge
+bridge.send_proposal(ghost_proposal)  # proposal → mesh + ledger
+```
+
+### Files
+
+- `bridge/DeedMeshBridge.py` — core bridge class
+- `bridge/cli.py` — `start` / `send` / `status` commands
+- `bridge/demo.py` — smoke-test with mock hardware
+- `bridge/config.yaml` — port, URLs, cell ID, key path
+- `tests/test_bridge.py` — pytest suite (17 tests, all mocked)
+
+---
+
+## Next Wiring Tasks (one evening each) — ALL COMPLETE ✅
+
+These three wiring tasks are now complete and linked via the Shadow-Net bridge.
+
+### ✅ Task 1 — Nostr signing in `ghostdeed.sh` (~1 h)
 
 `ghostdeed.sh` currently emits unsigned events. Wire in a signing step:
 
@@ -163,7 +207,7 @@ These are the three smallest concrete code changes to make the Ghost → deed pi
 
 `nak` v0.10.0 is a single-binary CLI for Nostr. Pin to a specific release rather than `@latest` to keep the Nostr event format stable.
 
-### Task 2 — deed-ledger ingest endpoint (~2 h)
+### ✅ Task 2 — deed-ledger ingest endpoint (~2 h)
 
 Add a small HTTP handler to `src/governance/deed-ledger/packages/backend/src/index.ts` that:
 
@@ -174,7 +218,7 @@ Add a small HTTP handler to `src/governance/deed-ledger/packages/backend/src/ind
 
 This lets Ghost (or any layer) POST deeds to the backend without needing a Nostr keypair locally.
 
-### Task 3 — deed-ledger EventLog shows Ghost deeds (~1 h)
+### ✅ Task 3 — deed-ledger EventLog shows Ghost deeds (~1 h)
 
 In `src/governance/deed-ledger/packages/frontend/app/components/EventLog.tsx`, extend the Nostr subscription filter to include `kind: 30023` events with tag `["layer", "ghostbrain"]`:
 

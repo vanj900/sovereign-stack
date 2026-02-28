@@ -16,7 +16,7 @@ cd sovereign-stack/src/ghoststack/examples
 
 ---
 
-## The 5 commands
+## The 6 commands
 
 ```bash
 # Layer 1 — offline-first messaging
@@ -33,6 +33,9 @@ python 04_bridge_agent.py
 
 # Full demo — two agents, offline sync, joint governance
 python 05_multi_agent_demo.py
+
+# Shadow-Net LoRa bridge demo — mock 3-node mesh + deed receipts
+python ../../mesh/shadow-net/bridge/demo.py
 ```
 
 ---

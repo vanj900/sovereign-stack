@@ -115,6 +115,22 @@ def slow_loop(shared: dict) -> None:
 
     print(f"[slow] started — model={SLOW_MODEL}  cycle={CYCLE_MIN}-{CYCLE_MAX}s")
 
+    # ── Shadow-Net bridge singleton (optional) ────────────────────────────────
+    # Initialise once here; reused on every proposal. Silently absent when
+    # the bridge module or hardware is unavailable.
+    _mesh_bridge = None
+    try:
+        _bridge_dir = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "..", "..", "mesh", "shadow-net", "bridge",
+        )
+        if _bridge_dir not in sys.path:
+            sys.path.insert(0, _bridge_dir)
+        from DeedMeshBridge import DeedMeshBridge  # type: ignore[import]
+        _mesh_bridge = DeedMeshBridge()
+    except Exception:  # noqa: BLE001
+        pass  # bridge unavailable — Ghost runs without mesh proposals
+
     try:
         while shared.get("alive", True):
             cycle_len = random.randint(CYCLE_MIN, CYCLE_MAX)
@@ -152,6 +168,17 @@ def slow_loop(shared: dict) -> None:
 
             shared["last_slow"] = time.time()
             print(f"[slow] ⚙  {reply[:300]}")
+
+            # ── Shadow-Net LoRa bridge hook ────────────────────────────────
+            # Flow over Containment: proposals circulate over LoRa mesh.
+            # Forkability: bridge is optional — missing config skips silently.
+            # Bridge singleton is initialised once (see _mesh_bridge below).
+            if passed and _mesh_bridge is not None:
+                try:
+                    ghost_proposal = reply[:500]
+                    _mesh_bridge.send_proposal(ghost_proposal)
+                except Exception:  # noqa: BLE001
+                    pass  # mesh send failed — continue without it
 
             # ── sleep remainder of cycle window ───────────────────────────
             elapsed = time.time() - t0

@@ -143,6 +143,35 @@ The Sovereign Stack is **not "just starting"**. Core systems are complete and va
 
 ---
 
+### ✅ Shadow-Net MVP: 3-node Meshtastic + Deed bridge (Month 3)
+
+**What shipped:**
+
+- **`src/mesh/shadow-net/bridge/DeedMeshBridge.py`** — core bridge class
+  connecting Meshtastic serial/TCP to the deed-ledger ingest endpoint.
+  Full type hints, axiom comments, mocked-hardware test coverage.
+
+- **`src/mesh/shadow-net/bridge/cli.py`** — three-command CLI:
+  `start` (blocking event loop), `send "…"` (single proposal),
+  `status` (node list + last 10 deeds).
+
+- **`src/mesh/shadow-net/bridge/demo.py`** — smoke-test that starts the
+  bridge with a mock interface, sends 3 proposals, and prints receipts
+  in EventLog format.
+
+- **`src/mesh/shadow-net/tests/test_bridge.py`** — 17 pytest tests covering
+  Deed model, config loading, packet→Deed conversion, POST mocking,
+  send_proposal, signature verification, and status.
+
+- **GhostAgent hook** — `src/ghost/dual/ghost_dual_daemon.py` now imports
+  `DeedMeshBridge` and calls `bridge.send_proposal()` in the slow-model
+  loop, so Ghost proposals travel over LoRa.
+
+- **`docs/INTEGRATION.md`** — new section "4. Shadow-Net LoRa Bridge"
+  links all four completed tasks and marks them COMPLETE ✅.
+
+---
+
 ### ⏳ First Cell Deployment (3-7 Nodes)
 
 **Current Work:**

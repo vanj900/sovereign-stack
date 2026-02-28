@@ -1,0 +1,6 @@
+meshtastic
+pydantic
+requests
+python-dotenv
+pytest
+# pypubsub — required by meshtastic (installed transitively); pin if needed
