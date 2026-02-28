@@ -1,4 +1,5 @@
 import type { Event } from 'nostr-tools';
+import { SimplePool } from 'nostr-tools';
 
 const DEFAULT_RELAYS = [
   'wss://relay.damus.io',
@@ -6,8 +7,6 @@ const DEFAULT_RELAYS = [
   'wss://relay.nostr.band'
 ];
 
-// Stub implementation for Nostr client
-// In production, use proper nostr-tools relay connection
 export class NostrClient {
   private relayUrls: string[];
 
@@ -17,31 +16,42 @@ export class NostrClient {
   }
 
   async connect(): Promise<void> {
-    console.log(`Connecting to Nostr relays: ${this.relayUrls.join(', ')}`);
-    // Stub: In production, establish WebSocket connections
+    console.log(`[nostr] Relay targets: ${this.relayUrls.join(', ')}`);
   }
 
   async publishEvent(event: Event): Promise<void> {
-    console.log('Publishing event to relays:', event);
-    // Stub: In production, broadcast to all connected relays
+    console.log(`[nostr] Publishing event id=${(event.id || '(unsigned)').slice(0, 12)}…`);
+    const pool = new SimplePool();
+    try {
+      await Promise.any(pool.publish(this.relayUrls, event));
+      console.log('[nostr] Event published to at least one relay');
+    } catch (err) {
+      // AggregateError means all relays failed — treat as non-fatal
+      if (err instanceof AggregateError) {
+        console.warn('[nostr] All relays rejected the event (non-fatal)');
+      } else {
+        console.warn('[nostr] Relay publish failed (non-fatal):', err);
+      }
+    } finally {
+      pool.close(this.relayUrls);
+    }
   }
 
   async subscribeToEvents(
-    filters: any[],
+    filters: Parameters<SimplePool['subscribeMany']>[1],
     onEvent: (event: Event) => void
   ): Promise<() => void> {
-    console.log('Subscribing to events with filters:', filters);
-    // Stub: In production, subscribe to relay events
-    
-    // Return cleanup function
+    console.log('[nostr] Subscribing with filter:', filters);
+    const pool = new SimplePool();
+    const sub = pool.subscribeMany(this.relayUrls, filters, { onevent: onEvent });
     return () => {
-      console.log('Unsubscribed from events');
+      sub.close();
+      pool.close(this.relayUrls);
     };
   }
 
   disconnect(): void {
-    console.log('Disconnected from Nostr relays');
-    // Stub: In production, close WebSocket connections
+    console.log('[nostr] Disconnected');
   }
 }
 
@@ -64,3 +74,4 @@ export function createDeedEvent(
     sig: '' // Would be signed
   };
 }
+
