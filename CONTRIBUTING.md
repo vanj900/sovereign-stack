@@ -466,7 +466,7 @@ Include for all hardware designs:
 
 By contributing to Sovereign Stack, you agree:
 
-1. **License Grant**: Your contributions are licensed under AGPL-3.0 (Class A) and subject to Class B commercial terms
+1. **License Grant**: Your contributions are licensed under AGPL-3.0 and subject to the Additional Sovereign Terms in LICENSE.md
 2. **Copyright**: You retain copyright but grant vanj900 perpetual rights to use, modify, and sublicense
 3. **Patent Grant**: You grant a royalty-free patent license for any patents covering your contributions
 4. **Originality**: You have the right to contribute (not violating employer IP, third-party rights, etc.)

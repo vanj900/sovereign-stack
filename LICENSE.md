@@ -1,48 +1,52 @@
-# sovereign-stack License
+# Sovereign Stack License v1.0 (February 2026)
 
-**Copyright © 2025–2026 vanj900 (https://github.com/vanj900). All Rights Reserved.**
+The Sovereign Stack (software, Meshtastic LoRa bridge, deed-ledger ingest, governance chains, hardware blueprints (SOV-HAB, magnetic seismic tiles, water potability), AI advisors, Nostr relays, docs, and all related Materials — "the Project") is licensed under the GNU Affero General Public License, Version 3 ("AGPL-3.0").
 
-This project is **dual-licensed** to protect sovereignty, forkability, and truth-by-receipts while blocking easy capture.
+Full AGPL-3.0 text: https://www.gnu.org/licenses/agpl-3.0.html
 
-### Class A License – Open / Non-Commercial Use
-GNU Affero General Public License v3.0 (AGPL-3.0)  
-Full text: https://www.gnu.org/licenses/agpl-3.0.html
+**Additional Sovereign Terms** (these supplement and control in case of conflict):
 
-Free forever for:
-- Personal use
-- Family / community projects
-- Education
-- Research
-- Non-profit / cooperative deployments
+## 1. Goal
 
-Strong copyleft: any modifications you distribute must stay under AGPL-3.0 and open source.
+Empower individuals and small operators to fork, build, deploy, and monetize local cells without gatekeeping. Prevent large-scale corporate capture and profiteering that dilutes sovereignty.
 
-### Class B License – Commercial Use
-**Any commercial activity requires explicit written permission from vanj900.**
+## 2. Definitions
 
-This includes:
-- Manufacturing / selling hardware
-- Paid services or consulting
-- Proprietary integrations
-- For-profit platforms
-- Government or corporate contracts
+- **Small Operator**:
+  - Natural persons (individuals), families, sole proprietors, partnerships, co-ops, non-profits, educational or research entities.
+  - Any for-profit entity (LLC, corp, etc.) with **fewer than 20 full-time equivalent employees** AND **gross annual revenue under $1,000,000 USD** in its most recent completed fiscal year.
+- **Large Entity**: Anyone or anything that is not a Small Operator.
 
-Contact me directly on GitHub (https://github.com/vanj900) for Class B terms. I decide. No exceptions.
+## 3. Rights Granted
+
+**To Small Operators**: Full AGPL-3.0 rights PLUS explicit commercial rights. You can freely:
+- Manufacture, sell, or distribute hardware/products based on the blueprints.
+- Offer paid services, consulting, installs, training, support, or hosted cells.
+- Deploy, operate, and charge for local meshes, stacks, or derivatives.
+- Fork and redistribute (must rename the project, keep full attribution + these terms unchanged).
+
+Only requirements: Comply with AGPL-3.0 (full source for any distributed mods) and retain all notices.
+
+**To Large Entities**: AGPL-3.0 rights granted **strictly for internal, non-commercial use only** (private testing/R&D, no customer-facing deployment, no manufacturing for resale, no paid services based on it).
+
+Any commercial use, scaling, manufacturing, or profiteering requires a separate paid commercial license. Contact sovereign@ghoststack.dev. We may grant on reasonable terms (royalties, back-contributions, etc.) or deny if it risks enclosure. No exceptions for subsidiaries or workarounds.
+
+## 4. Trademarks & Branding
+
+"Sovereign Stack", "GhostStack", the glowing blue ghost logo, crossed swords, and related marks are reserved. Small Operators may use them in good faith with clear attribution. Large Entities may not. All derivatives/forks must use distinct branding to avoid confusion.
+
+## 5. Anti-Capture
+
+You may not remove, alter, or bypass these terms. Attempting to enclose, privatize, or dilute the commons terminates all rights. Violations will be publicly called out.
+
+## 6. No Warranty
+
+Everything "AS IS". Hardware use requires professional engineering/safety review. Consult experts. Not production-ready.
 
 ---
 
-**Forking Policy**  
-Forking is not just allowed — it's encouraged.  
-Every fork **must**:
-- Use a completely different project name
-- Clearly state "Fork of sovereign-stack by vanj900"
-- Link back to https://github.com/vanj900/sovereign-stack
-- Keep this full license file unchanged
+If your operation grows past Small Operator thresholds, contact us immediately to transition.
 
-**Attribution**  
-vanj900 must be visibly credited as the original author in all derivatives.
+Build cells. Fork society. Stay sovereign. No central choke points — including the founder.
 
-**This license exists to keep the stack forkable and sovereign.**  
-If you try to capture or dilute it, you will be denied Class B and publicly called out.
-
-Flow over containment. Replication over scaling. Sovereignty as verb, not noun.
+Copyright © 2026 vanj900 and Sovereign Stack Contributors. All rights reserved where not granted above.

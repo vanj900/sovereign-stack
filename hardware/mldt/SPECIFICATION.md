@@ -4,7 +4,7 @@
 
 **Document Version:** 1.0
 **Classification:** vanj900 — Product Documentation
-**License:** AGPL-3.0 (Non-Commercial) / Class B (Commercial)
+**License:** AGPL-3.0 + Additional Sovereign Terms (Sovereign Stack License v1.0)
 
 ---
 

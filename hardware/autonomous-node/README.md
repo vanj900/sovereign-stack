@@ -367,10 +367,10 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for:
 
 ## License
 
-This platform design is released under vanj900's dual-license model:
+This platform design is released under the Sovereign Stack License v1.0 (AGPL-3.0 + Additional Sovereign Terms):
 
-**Class A (AGPL-3.0):** Free for personal, educational, research, and civic use.
-**Class B (Commercial):** Contact https://github.com/vanj900 for commercial deployment.
+**Small Operators:** Full AGPL-3.0 rights plus explicit commercial rights (manufacture, sell, offer services).
+**Large Entities:** Internal non-commercial use only; commercial deployment requires a paid license (sovereign@ghoststack.dev).
 
 See [LICENSE.md](../../LICENSE.md) for full terms.
 

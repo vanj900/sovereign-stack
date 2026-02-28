@@ -3,48 +3,42 @@
 ## Quick Reference
 
 **TL;DR:**
-- **Non-commercial use** (personal, education, community) → **AGPL-3.0** (free, open-source)
-- **Commercial use** (selling products/services) → **Class B license** (requires approval)
+- **Small Operators** (individuals, families, co-ops, non-profits, or for-profit entities with <20 FTE employees AND <$1M annual revenue) → **Full AGPL-3.0 + commercial rights** (free, open-source)
+- **Large Entities** (anyone not a Small Operator) → **AGPL-3.0 for internal non-commercial use only** — commercial use requires a paid license
 
 ---
 
-## Understanding the Dual-License Structure
+## Understanding the Sovereign Stack License v1.0
 
-### Why two licenses?
+### Why this structure?
 
-The Sovereign Stack exists to serve **autonomous communities**, not extractive profit. The dual-license model:
+The Sovereign Stack exists to serve **autonomous communities**, not extractive profit. The Sovereign Stack License v1.0:
 
 1. **Keeps community use free** (AGPL-3.0 ensures open access)
 2. **Prevents proprietary capture** (copyleft requirements)
-3. **Controls commercialization** (Class B approval process)
-4. **Funds ongoing development** (Class B revenue sharing)
+3. **Enables small-operator commerce** (explicitly grants commercial rights to small operators)
+4. **Controls large-entity commercialization** (requires paid license for large commercial actors)
 
-This structure aligns with vanj900's dual-license model.
+This structure is defined in [LICENSE.md](../LICENSE.md).
 
 ---
 
-## Class A: AGPL-3.0 (Non-Commercial)
+## Small Operators: Full Commercial Rights
 
-### What is AGPL-3.0?
+### Who qualifies as a Small Operator?
 
-The **GNU Affero General Public License v3.0** is a strong copyleft license that:
-- Grants you freedom to use, study, modify, and distribute the software
-- Requires you to share source code of modifications (even when running as a service)
-- Prevents proprietary lock-in
-- Ensures improvements benefit the entire community
+You are a **Small Operator** if you are:
+- A natural person (individual), family, sole proprietor, partnership, co-op, non-profit, educational or research entity.
+- Any for-profit entity (LLC, corp, etc.) with **fewer than 20 full-time equivalent employees** AND **gross annual revenue under $1,000,000 USD** in its most recent completed fiscal year.
 
-**Full license text:** See the `LICENSE` file in this repository
+### What can Small Operators do?
 
-### What counts as "non-commercial"?
-
-You're covered by AGPL-3.0 (Class A) if you're:
-
-✅ **Building for yourself/family**
+✅ **Build for yourself/family**
 - Constructing a SOV-HAB for personal habitation
 - Deploying GhostStack on your own hardware
 - Experimenting with Energy Coupler prototypes
 
-✅ **Running a community cooperative**
+✅ **Run a community cooperative**
 - Non-profit intentional communities
 - Ecovillages, cohousing projects
 - Mutual aid networks
@@ -54,17 +48,18 @@ You're covered by AGPL-3.0 (Class A) if you're:
 - Academic research on resilience systems
 - Training programs for builders
 
+✅ **Commercial activity (explicitly granted)**
+- Manufacture, sell, or distribute hardware/products based on the blueprints
+- Offer paid services, consulting, installs, training, support, or hosted cells
+- Deploy, operate, and charge for local meshes, stacks, or derivatives
+- Fork and redistribute (must rename the project, keep full attribution + terms unchanged)
+
 ✅ **Contributing to open-source**
 - Pull requests improving the codebase
 - Documentation, translations, bug fixes
 - Creating educational content
 
-✅ **Civic/Government pilots** (non-commercial)
-- Local government disaster relief projects
-- Public housing pilot programs (if non-profit)
-- Community land trusts
-
-### Key AGPL-3.0 requirements
+### Key AGPL-3.0 requirements for all users
 
 If you modify and distribute the Sovereign Stack:
 
@@ -77,11 +72,21 @@ This prevents someone from taking Sovereign Stack, making proprietary changes, a
 
 ---
 
-## Class B: Commercial Licensing
+## Large Entities: Internal Non-Commercial Use Only
 
-### What counts as "commercial"?
+### Who is a Large Entity?
 
-You need Class B approval if you're:
+Anyone who is **not** a Small Operator — typically for-profit entities with 20+ FTE employees or over $1,000,000 USD in annual gross revenue.
+
+### What can Large Entities do without a paid license?
+
+Large Entities may use the Sovereign Stack under AGPL-3.0 **strictly for**:
+- Private internal testing and R&D
+- No customer-facing deployment
+- No manufacturing for resale
+- No paid services based on it
+
+### What requires a paid commercial license?
 
 ❌ **Manufacturing for sale**
 - Building SOV-HABs to sell to customers
@@ -93,19 +98,14 @@ You need Class B approval if you're:
 - Paid training/certification programs
 - Managed hosting of GhostStack instances
 
-❌ **Licensing/franchising**
-- Franchising the Sovereign Stack methodology
-- Sublicensing to third parties
-- White-labeling the technology
-
-❌ **Proprietary integration**
+❌ **Scaling or profiteering**
 - Embedding GhostStack in closed-source products
 - Using trademarked terms in commercial branding
 - Creating SaaS platforms around Sovereign Stack
 
-### How do I apply for Class B?
+### How do Large Entities apply for a commercial license?
 
-Contact vanj900 directly on GitHub: https://github.com/vanj900
+Contact: **sovereign@ghoststack.dev**
 
 Include:
    - Legal entity details (company name, registration, jurisdiction)
@@ -115,25 +115,13 @@ Include:
 
 ### What are the terms?
 
-Class B licenses typically include:
+Commercial licenses for Large Entities typically include:
 
-- **Revenue sharing:** 5-15% of gross revenue from Sovereign Stack-derived products/services
-- **Sliding scale:** Higher for purely extractive use, lower for community-aligned ventures
-- **Waived fees:** Possible for exceptional community benefit
-- **Revocation clauses:** If terms are violated or use becomes harmful
+- **Revenue sharing/royalties** proportional to use
+- **Back-contribution requirements** to the open-source project
+- **Revocation clauses** if terms are violated or use becomes harmful
 
-All Class B revenue is reinvested in Sovereign Stack development per vanj900's licensing terms.
-
-### Can my application be denied?
-
-**Yes.** vanj900 evaluates applications against:
-
-- **Alignment with principles** (flow over containment, community sovereignty)
-- **Risk of harm** (surveillance, coercion, centralized control)
-- **Community benefit** (does commercialization help or hinder adoption?)
-- **Resource capacity** (can we support this use case?)
-
-vanj900 prioritizes community benefit over profit maximization.
+We may grant on reasonable terms or deny if it risks enclosure. No exceptions for subsidiaries or workarounds.
 
 ---
 
@@ -141,87 +129,84 @@ vanj900 prioritizes community benefit over profit maximization.
 
 ### Scenario 1: "I'm building a SOV-HAB for my family"
 
-**License:** Class A (AGPL-3.0)
+**Status:** Small Operator ✓
 **Action:** Build freely! No approval needed.
 **Requirement:** If you modify designs and share them, release under AGPL-3.0.
 
-### Scenario 2: "I want to start a company building SOV-HABs for clients"
+### Scenario 2: "I want to start a small company building SOV-HABs for clients"
 
-**License:** Class B (commercial approval required)
-**Action:** Apply for Class B license before starting operations.
-**Why:** You're manufacturing for commercial sale.
+**Status:** Small Operator (if <20 FTE and <$1M revenue) ✓
+**Action:** Proceed! Commercial rights are explicitly granted to Small Operators.
+**Requirement:** Comply with AGPL-3.0 (share source for any distributed mods), retain all notices.
 
 ### Scenario 3: "Our non-profit is deploying Sovereign Stack in a refugee camp"
 
-**License:** Class A (AGPL-3.0)
+**Status:** Small Operator ✓
 **Action:** Proceed freely! This is civic/humanitarian use.
 **Requirement:** Share any improvements back with the community.
 
 ### Scenario 4: "I'm writing a book about building SOV-HABs"
 
-**License:** Class A (AGPL-3.0) for technical content
+**Status:** Small Operator ✓
 **Action:** Educational content is permitted. Attribute properly.
-**Note:** If selling the book commercially, mention Sovereign Stack™ trademarks require permission for branding (descriptive use is fine).
+**Note:** Sovereign Stack™ trademarks require permission for branding; descriptive use is fine.
 
 ### Scenario 5: "Can I fork Sovereign Stack and start a competing project?"
 
-**License:** Class A (AGPL-3.0) allows forking!
+**Status:** Small Operator ✓
 **Action:** Fork freely, but:
-- Change the name (can't use "Sovereign Stack" trademark)
+- Change the name (can't use "Sovereign Stack" or "GhostStack" trademarks)
 - Maintain attribution to original project
-- Keep AGPL-3.0 or more permissive license
-- Document how your fork differs
+- Keep these terms unchanged
+- Use distinct branding
 
 **Why encouraged:** Forks enable community autonomy and experimentation.
 
 ### Scenario 6: "I built a SOV-HAB and want to sell it when I move"
 
-**License:** Class A (AGPL-3.0)
-**Action:** Selling a single built unit is personal property transfer, not commercial manufacturing.
-**Note:** If you start building multiple units for resale, that's commercial activity (Class B).
+**Status:** Small Operator ✓
+**Action:** Selling a single built unit is personal property transfer.
+**Note:** If you start building multiple units for resale as a business, check whether you remain a Small Operator.
 
-### Scenario 7: "My government wants to deploy 1,000 SOV-HABs"
+### Scenario 7: "A large corporation wants to deploy 1,000 SOV-HABs"
 
-**License:** Class B (likely required)
-**Action:** Contact us for Class B discussion.
-**Why:** Scale and contract terms likely require commercial licensing, even if government is non-profit.
+**Status:** Large Entity — commercial license required
+**Action:** Contact sovereign@ghoststack.dev before starting commercial operations.
+**Why:** Scale and commercial intent require a paid license.
 
 ---
 
 ## Trademark Usage
 
-The following terms are **trademarks of vanj900:**
+The following terms are **reserved marks of vanj900 and Sovereign Stack Contributors:**
 - Sovereign Stack™
-- SOV-HAB™
 - GhostStack™
+- SOV-HAB™
+- The glowing blue ghost logo
+- Crossed swords mark
 
-### Allowed without permission (Class A):
+### Small Operators — allowed in good faith with clear attribution:
 ✅ "Built using Sovereign Stack technology"
 ✅ "Compatible with GhostStack protocol"
 ✅ "Based on SOV-HAB designs by vanj900"
 
-### Requires written permission (Class B):
-❌ "Sovereign Stack Certified Builder"
-❌ Using logos in commercial products
-❌ "Official SOV-HAB by [Your Company]"
+### Large Entities — not permitted:
+❌ Any use of reserved marks without a paid commercial license
 
 **Descriptive use** (explaining what you're doing) is always fine.
-**Commercial branding** (implying endorsement/official status) requires approval.
+**Commercial branding** (implying endorsement/official status) requires approval for Large Entities.
 
 ---
 
 ## GitHub's "Unknown License" Warning
 
-GitHub shows "Unknown licenses found" because we use a **custom dual-license structure**. This is intentional.
+GitHub shows "Unknown licenses found" because we use a **custom license structure** layered on AGPL-3.0. This is intentional.
 
 **What GitHub sees:**
 - `LICENSE` → AGPL-3.0 ✓ (recognized)
-- `LICENSE.md` → Custom dual-license structure (not in SPDX database)
+- `LICENSE.md` → Sovereign Stack License v1.0 (custom additional terms, not in SPDX database)
 
-**This is normal** for projects with commercial licensing tiers. See also:
-- [Qt's dual licensing](https://www.qt.io/licensing/)
-- [MySQL's commercial licensing](https://www.mysql.com/about/legal/licensing/)
-- [GitLab's dual licensing](https://about.gitlab.com/install/ce-or-ee/)
+**This is normal** for projects with supplemental commercial licensing terms.
 
 The AGPL-3.0 `LICENSE` file satisfies GitHub's license detection for the open-source tier.
 
@@ -231,7 +216,7 @@ The AGPL-3.0 `LICENSE` file satisfies GitHub's license detection for the open-so
 
 By contributing (pull requests, issues, designs, documentation), you agree:
 
-1. **License grant:** Your contributions are licensed under AGPL-3.0 (Class A) + Class B terms
+1. **License grant:** Your contributions are licensed under AGPL-3.0 and subject to the Additional Sovereign Terms in LICENSE.md
 2. **Copyright:** You retain copyright but grant vanj900 perpetual rights to use/sublicense
 3. **Patent grant:** Royalty-free patent license for any patents covering your contributions
 4. **Warranty:** You have the right to contribute (not violating employer IP, etc.)
@@ -246,8 +231,8 @@ See `CONTRIBUTING.md` for detailed contribution guidelines.
 **GitHub:** https://github.com/vanj900
 **Docs:** https://github.com/vanj900/sovereign-stack
 
-### Class B licensing inquiries
-Contact vanj900 directly on **GitHub:** https://github.com/vanj900
+### Large Entity commercial licensing inquiries
+**Email:** sovereign@ghoststack.dev
 
 ### Report license violations
 **GitHub Issues:** https://github.com/vanj900/sovereign-stack/issues
@@ -255,31 +240,31 @@ Contact vanj900 directly on **GitHub:** https://github.com/vanj900
 ### Quick decision flowchart
 
 ```
-Are you making money from Sovereign Stack?
-├─ No → Class A (AGPL-3.0) ✓ Proceed freely
-└─ Yes
-   ├─ Selling built units/products → Class B (apply for approval)
-   ├─ Offering paid services → Class B (apply for approval)
-   ├─ Licensing to third parties → Class B (apply for approval)
-   └─ Accepting donations for non-profit work → Class A (AGPL-3.0) ✓
+Are you a Small Operator?
+(individual/family/co-op/non-profit, OR for-profit with <20 FTE AND <$1M revenue)
+├─ Yes → Full AGPL-3.0 + commercial rights ✓ Proceed freely
+└─ No (Large Entity)
+   ├─ Internal non-commercial use (testing/R&D) → AGPL-3.0 ✓
+   └─ Any commercial use → Paid license required
+      └─ Contact: sovereign@ghoststack.dev
 ```
 
 ---
 
 ## Philosophy
 
-The Sovereign Stack dual-license model embodies our core principle:
+The Sovereign Stack License v1.0 embodies our core principle:
 
 **"Flow over containment. Replication over scaling. Sovereignty as verb, not noun."**
 
-- **Class A (AGPL-3.0)** enables flow: Communities can freely replicate and adapt
-- **Class B (commercial control)** prevents containment: Extractive commercialization is managed
-- **Both together** protect sovereignty: No single entity can capture the commons
+- **Small Operators** get full flow: freely replicate, adapt, and monetize
+- **Large Entities** are prevented from containment: extractive commercialization requires a paid license
+- **Together** they protect sovereignty: no single large entity can capture the commons
 
 This structure ensures Sovereign Stack remains a **community resource**, not a **venture-backed product**.
 
 ---
 
-**Last Updated:** January 22, 2026
-**License Version:** Sovereign Stack Dual License v1.0
-**Maintained By:** vanj900
+**Last Updated:** February 2026
+**License Version:** Sovereign Stack License v1.0
+**Maintained By:** vanj900 and Sovereign Stack Contributors

@@ -99,7 +99,7 @@ Relates to #
 
 **By submitting this PR, I confirm that:**
 - I have the right to contribute this work
-- My contributions are licensed under AGPL-3.0 (Class A) and subject to Class B terms
+- My contributions are licensed under AGPL-3.0 and subject to the Additional Sovereign Terms in LICENSE.md
 - I grant vanj900 perpetual rights to use, modify, and sublicense this work
 - I provide this contribution "as is" without warranty
 

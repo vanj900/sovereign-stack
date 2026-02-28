@@ -62,7 +62,7 @@ Peer-to-peer communication infrastructure independent of ISP control.
 
 ### Code Standards
 
-- **Licensing:** All code is dual-licensed (AGPL-3.0 + Class B)
+- **Licensing:** All code is licensed under AGPL-3.0 + Additional Sovereign Terms (Sovereign Stack License v1.0)
 - **Security:** No hardcoded secrets, credentials, or API keys
 - **Testing:** Minimum 80% code coverage for core components
 - **Documentation:** Inline comments for complex logic, README for setup
@@ -135,7 +135,7 @@ See [CONTRIBUTING.md](../CONTRIBUTING.md) for:
 - Security review process
 - Contributor License Agreement
 
-By contributing, you agree to dual-license your code under AGPL-3.0 (Class A) and vanj900's commercial terms (Class B).
+By contributing, you agree to license your code under AGPL-3.0 and the Additional Sovereign Terms in LICENSE.md.
 
 ---
 

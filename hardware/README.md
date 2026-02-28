@@ -87,7 +87,7 @@ Complete energy infrastructure designs.
 
 ### Design Principles
 
-1. **Open Source:** All designs freely available (Class A AGPL-3.0)
+1. **Open Source:** All designs freely available under AGPL-3.0
 2. **Repairable:** Standard components, minimal proprietary parts
 3. **Modular:** Interchangeable subsystems
 4. **Resilient:** Graceful degradation, redundancy where critical
@@ -220,10 +220,10 @@ See [CONTRIBUTING.md](../CONTRIBUTING.md) for contribution workflow.
 
 ## Licensing
 
-All hardware designs are dual-licensed:
+All hardware designs are licensed under the Sovereign Stack License v1.0 (AGPL-3.0 + Additional Sovereign Terms):
 
-- **Class A (AGPL-3.0):** Free for personal, community, educational use
-- **Class B (Commercial):** Manufacturing for sale requires approval
+- **Small Operators:** Full AGPL-3.0 rights plus explicit commercial rights (manufacture, sell, offer services)
+- **Large Entities:** Internal non-commercial use only; commercial use requires a paid license
 
 See [LICENSE.md](../LICENSE.md) for details.
 
