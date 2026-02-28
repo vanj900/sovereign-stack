@@ -75,6 +75,36 @@ ghost_deed_build() {
     "$content"
 }
 
+# ── Sign deed event via nak CLI ───────────────────────────────────────────────
+# Returns signed event JSON to stdout.  Falls back to unsigned if nak is absent
+# or GHOST_NOSTR_NSEC is not configured.
+# Install nak: go install github.com/fiatjaf/nak@v0.10.0
+ghost_deed_sign() {
+  local json="$1"
+  # Require both nak binary and a configured nsec key
+  if [[ -z "${GHOST_NOSTR_NSEC:-}" ]]; then
+    echo "[ghostdeed] INFO: GHOST_NOSTR_NSEC not set — skipping Nostr signing" >&2
+    printf '%s' "$json"
+    return 0
+  fi
+  if ! command -v nak &>/dev/null; then
+    echo "[ghostdeed] INFO: nak not found — skipping Nostr signing (install: go install github.com/fiatjaf/nak@v0.10.0)" >&2
+    printf '%s' "$json"
+    return 0
+  fi
+  # nak event --sec reads from stdin and outputs the signed event JSON
+  local signed nak_err
+  nak_err=$(mktemp)
+  signed=$(printf '%s' "$json" | nak event --sec "$GHOST_NOSTR_NSEC" 2>"$nak_err") || {
+    echo "[ghostdeed] WARN: nak signing failed — $(cat "$nak_err") — falling back to unsigned event" >&2
+    rm -f "$nak_err"
+    printf '%s' "$json"
+    return 0
+  }
+  rm -f "$nak_err"
+  printf '%s' "$signed"
+}
+
 # ── Append to local deed journal ───────────────────────────────────────────────
 ghost_deed_journal() {
   local event_json="$1"
@@ -99,16 +129,43 @@ ghost_deed_publish() {
   fi
 }
 
+# ── POST to deed-ledger ingest endpoint ──────────────────────────────────────
+# Silently skips if curl is not installed or GHOST_DEED_BACKEND is unset.
+# Set GHOST_DEED_BACKEND=http://localhost:3001 to route deeds through the
+# backend for server-side signing + Nostr relay publishing.
+ghost_deed_post_backend() {
+  local event_json="$1"
+  [[ -z "${GHOST_DEED_BACKEND:-}" ]] && return 0
+  command -v curl &>/dev/null || return 0
+
+  local http_code
+  http_code=$(curl --silent --max-time 5 \
+    -X POST "${GHOST_DEED_BACKEND}/ghost-deed" \
+    -H "Content-Type: application/json" \
+    -d "$event_json" \
+    --write-out '%{http_code}' \
+    --output /dev/null 2>&1)
+  if [[ "$http_code" != "200" ]]; then
+    echo "[ghostdeed] WARN: backend ingest failed (backend=${GHOST_DEED_BACKEND}  http_status=${http_code})" >&2
+  fi
+}
+
 # ── Main entry: build, journal, and optionally publish ────────────────────────
 ghost_deed_post() {
   local event_json
   event_json=$(ghost_deed_build)
 
+  # Sign the event if GHOST_NOSTR_NSEC + nak are available
+  event_json=$(ghost_deed_sign "$event_json")
+
   # Always write to local journal (ephemeral — wiped with Ghost on exit)
   ghost_deed_journal "$event_json"
 
-  # Best-effort relay publish (no failure if relay is absent)
-  ghost_deed_publish "$event_json"
+  # Option 1: POST to deed-ledger backend (signs + publishes server-side)
+  ghost_deed_post_backend "$event_json"
+
+  # Option 2: Direct relay publish via websocat (skips if backend is configured)
+  [[ -z "${GHOST_DEED_BACKEND:-}" ]] && ghost_deed_publish "$event_json"
 
   echo "[ghostdeed] Deed posted  stage=${GHOST_STAGE:-dormant}  mask=${GHOST_MASK:-none}  cycles=${GHOST_CYCLES:-0}"
 }
