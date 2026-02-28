@@ -23,7 +23,7 @@ from typing import Any
 
 import requests
 import yaml
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
 
@@ -109,6 +109,8 @@ class DeedMeshBridge:
     any Deed conversion or ingest logic.
     """
 
+    DEED_WINDOW_SIZE: int = 10  # rolling window of recent deeds for status
+
     def __init__(self, config_path: str = "config.yaml"):
         # ── Flow: load config first, then connect ─────────────────────────
         self.config = load_config(config_path)
@@ -133,10 +135,8 @@ class DeedMeshBridge:
         if self._interface is not None:
             return  # already connected (or mock injected)
         try:
-            import meshtastic.serial_interface  # type: ignore[import]
-            self._interface = meshtastic.serial_interface.SerialInterface(
-                self.config.meshtastic_port
-            )
+            import meshtastic.serial_interface as _ms  # type: ignore[import]
+            self._interface = _ms.SerialInterface(self.config.meshtastic_port)
             logger.info("Connected to Meshtastic on %s", self.config.meshtastic_port)
         except Exception as exc:
             logger.error("Meshtastic connect failed: %s", exc)
@@ -180,7 +180,7 @@ class DeedMeshBridge:
         # ── Broadcast signed receipt back to mesh + log ───────────────────
         self._broadcast_receipt(deed)
         self._last_deeds.append(deed)
-        if len(self._last_deeds) > 10:
+        if len(self._last_deeds) > self.DEED_WINDOW_SIZE:
             self._last_deeds.pop(0)
 
         return deed
@@ -305,7 +305,7 @@ class DeedMeshBridge:
         self._post_deed(deed)
         self._log_event("proposal_sent", deed.model_dump())
         self._last_deeds.append(deed)
-        if len(self._last_deeds) > 10:
+        if len(self._last_deeds) > self.DEED_WINDOW_SIZE:
             self._last_deeds.pop(0)
 
         return deed
