@@ -299,7 +299,7 @@ The Sovereign Stack is **not "just starting"**. Core systems are complete and va
 
 #### Economic Integration
 - Parallel economy experiments (barter, timebanking, local currencies)
-- Commercial integration (AGPL-3.0 compliance, Class B licensing)
+- Commercial integration (AGPL-3.0 compliance, Sovereign Stack License v1.0)
 - Resource pooling protocols (shared capital without hoarding)
 
 **Dependencies:**

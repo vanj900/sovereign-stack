@@ -201,12 +201,12 @@ Full contribution guidelines, coding standards, hardware design standards, and t
 
 ## License
 
-**Dual-licensed by vanj900 (@vanj900)**
+**Sovereign Stack License v1.0 — AGPL-3.0 + Additional Sovereign Terms**
 
-| Use Case                              | License                          |
-|---------------------------------------|----------------------------------|
-| Personal, family, community, education, research, non-profit | **Class A — AGPL-3.0** (free)   |
-| Manufacturing, paid services, proprietary integration, for-profit | **Class B** — requires explicit written approval from vanj900 |
+| Who | Rights |
+|-----|--------|
+| **Small Operators** (individuals, families, co-ops, non-profits, or for-profit entities with <20 FTE employees AND <$1M annual revenue) | Full AGPL-3.0 rights **plus** explicit commercial rights (manufacture, sell, deploy, charge for services) |
+| **Large Entities** (anyone not a Small Operator) | AGPL-3.0 for internal, non-commercial use only — commercial use requires a separate paid license |
 
 Forking is explicitly encouraged. Forks must rename the project and keep full attribution.  
 See [LICENSE.md](LICENSE.md) for full terms.
@@ -218,7 +218,7 @@ See [LICENSE.md](LICENSE.md) for full terms.
 | Purpose | Channel |
 |---------|---------|
 | General inquiries | [GitHub](https://github.com/vanj900) |
-| Commercial licensing (Class B) | [GitHub](https://github.com/vanj900) |
+| Commercial licensing (Large Entities) | sovereign@ghoststack.dev |
 | Security vulnerabilities | [GitHub Issues](https://github.com/vanj900/sovereign-stack/issues) (use private disclosure if sensitive) |
 | Technical discussions | [GitHub Discussions](https://github.com/vanj900/sovereign-stack/discussions) |
 | Bug reports / feature requests | [GitHub Issues](https://github.com/vanj900/sovereign-stack/issues) |

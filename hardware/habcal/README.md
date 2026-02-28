@@ -416,11 +416,11 @@ See [CONTRIBUTING.md](../../CONTRIBUTING.md) for contribution workflow.
 
 ## Licensing
 
-**Hardware Designs:** Class A (AGPL-3.0) for non-commercial use
+**Hardware Designs:** AGPL-3.0 (Small Operators: full commercial rights; Large Entities: internal non-commercial use only)
 **Firmware/Software:** AGPL-3.0
 **Documentation:** CC BY-SA 4.0
 
-Commercial manufacturing or services require Class B approval from vanj900.
+Large Entities seeking commercial manufacturing or services require a paid license. Contact sovereign@ghoststack.dev.
 
 See [LICENSE.md](../../LICENSE.md) for complete terms.
 
