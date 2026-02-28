@@ -153,6 +153,26 @@ def slow_loop(shared: dict) -> None:
             shared["last_slow"] = time.time()
             print(f"[slow] ⚙  {reply[:300]}")
 
+            # ── Shadow-Net LoRa bridge hook ────────────────────────────────
+            # Flow over Containment: proposals circulate over LoRa mesh.
+            # Forkability: bridge is optional — missing config skips silently.
+            if passed:
+                try:
+                    import sys as _sys
+                    import os as _os
+                    _bridge_dir = _os.path.join(
+                        _os.path.dirname(_os.path.abspath(__file__)),
+                        "..", "..", "mesh", "shadow-net", "bridge",
+                    )
+                    if _bridge_dir not in _sys.path:
+                        _sys.path.insert(0, _bridge_dir)
+                    from DeedMeshBridge import DeedMeshBridge  # type: ignore[import]
+                    ghost_proposal = reply[:500]
+                    _bridge = DeedMeshBridge()
+                    _bridge.send_proposal(ghost_proposal)
+                except Exception:  # noqa: BLE001
+                    pass  # mesh bridge unavailable — continue without it
+
             # ── sleep remainder of cycle window ───────────────────────────
             elapsed = time.time() - t0
             sleep_t = max(0.0, cycle_len - elapsed)

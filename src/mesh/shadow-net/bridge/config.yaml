@@ -1,0 +1,5 @@
+meshtastic_port: /dev/ttyUSB0
+deed_ingest_url: http://localhost:3000/api/deeds/ingest
+nostr_relay: wss://nostr.example.com
+cell_id: "cell-alpha-001"
+private_key_path: ~/.sov/keys/shadow-net.key

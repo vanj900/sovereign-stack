@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "shadow-net-bridge"
+version = "0.1.0"
+description = "Meshtastic LoRa bridge for Sovereign Stack deed ingest"
+requires-python = ">=3.10"
+dependencies = [
+    "meshtastic",
+    "pydantic",
+    "requests",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+shadow-net-bridge = "bridge.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["../tests"]

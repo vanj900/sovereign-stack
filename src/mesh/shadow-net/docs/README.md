@@ -1,15 +1,15 @@
-# Shadow-Net — Meshtastic LoRa Bridge
+# Shadow-Net LoRa Bridge — Sovereign Stack
 
 ## Overview
 
-Shadow-Net is the **Layer 2 mesh transport** of the Sovereign Stack.  This
-sub-module adds a **Meshtastic LoRa bridge** that lets off-grid nodes exchange
-governance proposals and deed receipts without any internet connection.
+Shadow-Net adds a **Meshtastic LoRa mesh layer** to the Sovereign Stack,
+letting off-grid nodes exchange governance proposals and deed receipts without
+any internet connection.
 
-Every packet received on the mesh is converted to a **Sovereign Deed** (same
-schema as `deed-ledger`) and posted to the ingest endpoint.  Every proposal
-sent by the **GhostAgent AI advisor** travels back over the mesh so off-grid
-nodes stay in sync.
+Every packet received on the mesh is converted to a **Sovereign Deed** (the
+same schema used by `deed-ledger`) and posted to the ingest endpoint.  Every
+proposal sent by the **GhostAgent AI advisor** travels back over the mesh so
+off-grid nodes stay in sync.
 
 Key motivations:
 
@@ -89,33 +89,30 @@ pip install -r requirements.txt
 
 ### 3. Configure
 
-Edit `bridge/config.yaml`:
+Copy and edit `config.yaml`:
 
-```yaml
-meshtastic_port: /dev/ttyUSB0
-deed_ingest_url: http://localhost:3000/api/deeds/ingest
-nostr_relay: wss://nostr.example.com
-cell_id: "cell-alpha-001"
-private_key_path: ~/.sov/keys/shadow-net.key
+```bash
+cp config.yaml.example config.yaml   # or edit config.yaml directly
+# set meshtastic_port, deed_ingest_url, cell_id
 ```
 
 ### 4. Run the bridge
 
 ```bash
 # blocking — listens for mesh packets and posts deeds
-python bridge/cli.py start
+python cli.py start
 
 # send a single proposal
-python bridge/cli.py send "Proposal: share 50W solar"
+python cli.py send "Proposal: share 50W solar"
 
 # show mesh nodes + last 10 deeds
-python bridge/cli.py status
+python cli.py status
 ```
 
 ### 5. Smoke-test with mock hardware
 
 ```bash
-python bridge/demo.py
+python demo.py
 ```
 
 ---
@@ -131,34 +128,4 @@ The next evolution removes the laptop/SBC bridge entirely:
 - Target hardware: Heltec V4 (4 MB PSRAM, 8 MB flash — sufficient for
   MicroPython + deed store)
 
----
-
-## Directory Structure
-
-```
-shadow-net/
-├── bridge/             ← Python bridge (this module)
-│   ├── DeedMeshBridge.py
-│   ├── cli.py
-│   ├── demo.py
-│   ├── config.yaml
-│   └── requirements.txt
-├── docs/               ← Extended documentation
-│   └── README.md
-├── tests/              ← pytest suite
-│   └── test_bridge.py
-└── src/                ← Bio-digital organism (legacy)
-```
-
-## Roadmap
-An outline of our future plans, including upcoming features and improvements.
-
-## Vision Statement
-Our vision is to enable secure and anonymous communication through innovative technology.
-
-> **Tagline**: Whispers in the dark. No traces. No masters.
-
-## Licensing
-Shadow-Net 2.0 is licensed under the GPL-3.0 license, ensuring freedom to use, modify, and distribute our software.
-
-Refer to the additional documentation in [EVOLUTION.md](EVOLUTION.md) for insights into the evolution of Shadow-Net.
+See `docs/FUTURE_MICROPYTHON.md` (planned) for the design spec.
