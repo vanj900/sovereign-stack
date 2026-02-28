@@ -110,7 +110,7 @@ Source code lives in [src/](src/). All are early-stage; APIs and architecture ar
 |-----------|-------------|----------|--------|
 | **GhostStack** | Civic OS — governance, identity, Integrity Chain, resource allocation | TBD (Rust/Go) | Design phase |
 | **Energy Coupler** | Bidirectional energy flow control, demand forecasting, grid interface | TBD (embedded) | Specification phase |
-| **Mesh** | Peer-to-peer routing, encryption, discovery, clearnet bridge | TBD (cross-platform) | Research phase |
+| **Mesh** | Peer-to-peer routing, encryption, discovery, clearnet bridge | Python (bridge MVP), TBD (core) | MVP — bridge operational |
 
 See [src/README.md](src/README.md) for the proposed technology stack and contribution guidelines.
 
@@ -229,4 +229,4 @@ See [LICENSE.md](LICENSE.md) for full terms.
 
 **Maintained By:** vanj900 (https://github.com/vanj900)
 **License:** See [LICENSE.md](LICENSE.md)
-**Last Updated:** January 2026
+**Last Updated:** February 2026

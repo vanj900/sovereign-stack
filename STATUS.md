@@ -1,7 +1,7 @@
 # STATUS.md
 
 **Project Status:** Phase 2 - Stabilization & First Cell Deployment
-**Last Updated:** February 24, 2026
+**Last Updated:** February 28, 2026
 **Maintained By:** vanj900
 
 ---
@@ -109,7 +109,7 @@ The Sovereign Stack is **not "just starting"**. Core systems are complete and va
 ## Phase 2: Stabilization & First Cell (Current ⏳)
 
 **Timeline:** Months 6-12
-**Status:** MVP governance core stabilized — docs overhauled
+**Status:** MVP governance core stabilized — Shadow-Net LoRa bridge shipped
 
 ---
 
@@ -143,32 +143,32 @@ The Sovereign Stack is **not "just starting"**. Core systems are complete and va
 
 ---
 
-### ✅ Shadow-Net MVP: 3-node Meshtastic + Deed bridge (Month 3)
+### ✅ Feb 28 Sprint: Shadow-Net LoRa Bridge MVP (Complete)
 
 **What shipped:**
 
-- **`src/mesh/shadow-net/bridge/DeedMeshBridge.py`** — core bridge class
-  connecting Meshtastic serial/TCP to the deed-ledger ingest endpoint.
+- **Meshtastic LoRa bridge** — `src/mesh/shadow-net/bridge/DeedMeshBridge.py`
+  connects Meshtastic serial/TCP hardware to the deed-ledger ingest endpoint.
   Full type hints, axiom comments, mocked-hardware test coverage.
 
-- **`src/mesh/shadow-net/bridge/cli.py`** — three-command CLI:
-  `start` (blocking event loop), `send "…"` (single proposal),
-  `status` (node list + last 10 deeds).
+- **Bridge CLI** — `src/mesh/shadow-net/bridge/cli.py`: `start`, `send`, and
+  `status` commands; usable with real or simulated hardware.
 
-- **`src/mesh/shadow-net/bridge/demo.py`** — smoke-test that starts the
-  bridge with a mock interface, sends 3 proposals, and prints receipts
-  in EventLog format.
+- **Smoke-test demo** — `src/mesh/shadow-net/bridge/demo.py` starts the bridge
+  with a mock interface, sends 3 proposals, and prints EventLog receipts.
 
-- **`src/mesh/shadow-net/tests/test_bridge.py`** — 17 pytest tests covering
+- **17 pytest tests** — `src/mesh/shadow-net/tests/test_bridge.py` covering
   Deed model, config loading, packet→Deed conversion, POST mocking,
-  send_proposal, signature verification, and status.
+  send_proposal, signature verification, and node status.
 
-- **GhostAgent hook** — `src/ghost/dual/ghost_dual_daemon.py` now imports
-  `DeedMeshBridge` and calls `bridge.send_proposal()` in the slow-model
-  loop, so Ghost proposals travel over LoRa.
+- **GhostAgent integration** — `src/ghost/dual/ghost_dual_daemon.py` wired to
+  `DeedMeshBridge.send_proposal()`, so Ghost slow-model proposals now travel
+  over LoRa automatically.
 
-- **`docs/INTEGRATION.md`** — new section "4. Shadow-Net LoRa Bridge"
-  links all four completed tasks and marks them COMPLETE ✅.
+- **Integration docs updated** — `docs/INTEGRATION.md` "Shadow-Net LoRa Bridge"
+  section marked COMPLETE ✅.
+
+**Blockers cleared:** None — bridge is live, tested, and integrated.
 
 ---
 
