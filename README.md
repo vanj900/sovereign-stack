@@ -195,22 +195,21 @@ Full contribution guidelines, coding standards, hardware design standards, and t
 - Software: Python, Rust, TypeScript (see [src/README.md](src/README.md))
 - Hardware: FreeCAD, KiCad (see [hardware/README.md](hardware/README.md))
 - Docs: Markdown, SVG diagrams (see [docs/README.md](docs/README.md))
-- Security vulnerabilities: email security@o1labs.community (not public issues)
+- Security vulnerabilities: report via [GitHub Issues](https://github.com/vanj900/sovereign-stack/issues) (not public issues)
 
 ---
 
 ## License
 
-Dual-licensed. See [LICENSE.md](LICENSE.md) for full terms.
+**Dual-licensed by vanj900 (@vanj900)**
 
-| Use | License |
-|-----|---------|
-| Personal/community/educational/research use | **Class A — AGPL-3.0** (free) |
-| Commercial manufacturing, paid services, proprietary integration | **Class B** — requires written approval from O1 Labs CIC |
+| Use Case                              | License                          |
+|---------------------------------------|----------------------------------|
+| Personal, family, community, education, research, non-profit | **Class A — AGPL-3.0** (free)   |
+| Manufacturing, paid services, proprietary integration, for-profit | **Class B** — requires explicit written approval from vanj900 |
 
-Forking is explicitly encouraged. Forks must rename the project and maintain attribution. See [LICENSE.md](LICENSE.md) for fork requirements.
-
-O1 Labs CIC operates under a **statutory asset lock**: all assets serve community benefit; no private profit distributions.
+Forking is explicitly encouraged. Forks must rename the project and keep full attribution.  
+See [LICENSE.md](LICENSE.md) for full terms.
 
 ---
 
@@ -218,17 +217,16 @@ O1 Labs CIC operates under a **statutory asset lock**: all assets serve communit
 
 | Purpose | Channel |
 |---------|---------|
-| General inquiries | hello@o1labs.community |
-| Commercial licensing | licensing@o1labs.community |
-| Security vulnerabilities | security@o1labs.community |
+| General inquiries | [GitHub](https://github.com/vanj900) |
+| Commercial licensing (Class B) | [GitHub](https://github.com/vanj900) |
+| Security vulnerabilities | [GitHub Issues](https://github.com/vanj900/sovereign-stack/issues) (use private disclosure if sensitive) |
 | Technical discussions | [GitHub Discussions](https://github.com/vanj900/sovereign-stack/discussions) |
 | Bug reports / feature requests | [GitHub Issues](https://github.com/vanj900/sovereign-stack/issues) |
-| Legal questions | legal@o1labs.community |
 
 ---
 
 *"Flow over containment. Replication over scaling. Sovereignty as verb, not noun."*
 
-**Maintained By:** O1 Labs CIC
+**Maintained By:** vanj900 (https://github.com/vanj900)
 **License:** See [LICENSE.md](LICENSE.md)
 **Last Updated:** January 2026

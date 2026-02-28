@@ -179,14 +179,14 @@ See [CONTRIBUTING.md](../CONTRIBUTING.md) for detailed guidelines.
 
 ## Questions?
 
-- **General:** hello@o1labs.community
+- **General:** https://github.com/vanj900
 - **Technical:** Open a GitHub Discussion
-- **Licensing:** licensing@o1labs.community
-- **Security:** security@o1labs.community
+- **Licensing:** https://github.com/vanj900
+- **Security:** https://github.com/vanj900/sovereign-stack/issues
 
 ---
 
 *"Flow over containment. Replication over scaling. Sovereignty as verb, not noun."*
 
-**Maintained By:** O1 Labs CIC
+**Maintained By:** vanj900
 **License:** See [LICENSE.md](../LICENSE.md)

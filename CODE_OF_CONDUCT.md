@@ -117,7 +117,7 @@ If you experience or witness unacceptable behavior:
 - Contact local authorities if physical safety is at risk
 
 **For community conduct issues:**
-- Email: conduct@o1labs.community
+- GitHub: https://github.com/vanj900
 - Include: Description of incident, date/time, individuals involved, any supporting evidence
 - Confidentiality: Reports are handled confidentially
 
@@ -159,7 +159,7 @@ Depending on severity, maintainers may:
 
 If you disagree with an enforcement decision:
 
-1. **Email**: conduct-appeals@o1labs.community
+1. **GitHub**: https://github.com/vanj900
 2. **Include**: Original incident details, enforcement action taken, your perspective
 3. **Timeline**: Appeals reviewed within 14 days
 
@@ -197,8 +197,8 @@ We are grateful to these communities for their work on inclusive conduct standar
 This Code of Conduct will evolve as our community grows. We welcome feedback:
 
 - **Suggestions**: Open a GitHub Discussion
-- **Clarifications**: conduct@o1labs.community
-- **Amendments**: Proposed via pull request, approved by O1 Labs CIC Directors
+- **Clarifications**: https://github.com/vanj900
+- **Amendments**: Proposed via pull request, approved by vanj900 Directors
 
 **Version History:**
 - v1.0 (2026-01-22): Initial Code of Conduct
@@ -207,9 +207,9 @@ This Code of Conduct will evolve as our community grows. We welcome feedback:
 
 ## Contact
 
-- **Code of Conduct reports**: conduct@o1labs.community
-- **General questions**: hello@o1labs.community
-- **Appeals**: conduct-appeals@o1labs.community
+- **Code of Conduct reports**: [GitHub Issues](https://github.com/vanj900/sovereign-stack/issues) — open a new issue with label "conduct"
+- **General questions**: [GitHub Discussions](https://github.com/vanj900/sovereign-stack/discussions)
+- **Appeals**: Contact vanj900 directly via [GitHub](https://github.com/vanj900)
 
 ---
 
@@ -230,4 +230,4 @@ We recognize that creating a truly inclusive community is ongoing work. We commi
 
 **Version**: 1.0
 **Effective Date**: January 22, 2026
-**Maintained By**: O1 Labs CIC
+**Maintained By**: vanj900

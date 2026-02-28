@@ -100,7 +100,7 @@ Relates to #
 **By submitting this PR, I confirm that:**
 - I have the right to contribute this work
 - My contributions are licensed under AGPL-3.0 (Class A) and subject to Class B terms
-- I grant O1 Labs CIC perpetual rights to use, modify, and sublicense this work
+- I grant vanj900 perpetual rights to use, modify, and sublicense this work
 - I provide this contribution "as is" without warranty
 
 See [LICENSE.md](../LICENSE.md) for complete licensing terms.

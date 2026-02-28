@@ -3,7 +3,7 @@
 ## Complete Technical Specification
 
 **Document Version:** 1.0
-**Classification:** O1 Labs CIC — Product Documentation
+**Classification:** vanj900 — Product Documentation
 **License:** AGPL-3.0 (Non-Commercial) / Class B (Commercial)
 
 ---
@@ -895,9 +895,9 @@ $$\delta \approx \frac{0.3 \times 9.81}{(2\pi \times 1)^2} \times (1 + 0.15) = \
 *[This section would be populated with certified MLDT cassette manufacturers, structural skin suppliers, and installation contractors. As of this specification version, the technology is in prototype phase.]*
 
 **For inquiries regarding:**
-- **Licensing and commercialization:** licensing@o1labs.community
-- **Technical collaboration:** hardware@o1labs.community
-- **Research partnerships:** research@o1labs.community
+- **Licensing and commercialization:** https://github.com/vanj900
+- **Technical collaboration:** https://github.com/vanj900
+- **Research partnerships:** https://github.com/vanj900
 
 ---
 
@@ -905,7 +905,7 @@ $$\delta \approx \frac{0.3 \times 9.81}{(2\pi \times 1)^2} \times (1 + 0.15) = \
 
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
-| 1.0 | January 2026 | Initial complete specification | O1 Labs CIC Engineering Team |
+| 1.0 | January 2026 | Initial complete specification | vanj900 Engineering Team |
 
 ---
 

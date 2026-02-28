@@ -467,12 +467,12 @@ Include for all hardware designs:
 By contributing to Sovereign Stack, you agree:
 
 1. **License Grant**: Your contributions are licensed under AGPL-3.0 (Class A) and subject to Class B commercial terms
-2. **Copyright**: You retain copyright but grant O1 Labs CIC perpetual rights to use, modify, and sublicense
+2. **Copyright**: You retain copyright but grant vanj900 perpetual rights to use, modify, and sublicense
 3. **Patent Grant**: You grant a royalty-free patent license for any patents covering your contributions
 4. **Originality**: You have the right to contribute (not violating employer IP, third-party rights, etc.)
 5. **No Warranty**: Contributions are provided "as is" without warranty
 
-**If you cannot agree to these terms, do not contribute.** Contact O1 Labs CIC for alternative arrangements.
+**If you cannot agree to these terms, do not contribute.** Contact vanj900 on GitHub (https://github.com/vanj900) for alternative arrangements.
 
 See [LICENSE.md](LICENSE.md) for complete licensing terms.
 
@@ -522,7 +522,7 @@ If your contribution contradicts these principles, discuss with maintainers befo
 
 - **GitHub Discussions**: Best for general questions, ideas, and community chat
 - **GitHub Issues**: For bug reports, feature requests, and specific problems
-- **Email**: hello@o1labs.community for direct inquiries
+- **GitHub**: https://github.com/vanj900 for direct inquiries
 
 ### Before Asking for Help
 
@@ -570,7 +570,7 @@ Contributors are recognized in several ways:
 - **Release notes**: Major contributions highlighted in releases
 - **Community gratitude**: Appreciation from users and maintainers
 
-**Note**: O1 Labs CIC does not provide financial compensation for contributions. All work is voluntary under open-source principles.
+**Note**: vanj900 does not provide financial compensation for contributions. All work is voluntary under open-source principles.
 
 ---
 
@@ -581,7 +581,7 @@ Contributors are recognized in several ways:
 **Do not open public issues for security vulnerabilities.**
 
 **Instead:**
-1. Email: security@o1labs.community
+1. GitHub Issues: https://github.com/vanj900/sovereign-stack/issues
 2. Include: Description, impact, reproduction steps
 3. Allow: 90 days for fix before public disclosure
 
@@ -611,10 +611,10 @@ See `docs/research/` for current work.
 
 ## Questions About Contributing?
 
-- **General**: hello@o1labs.community
+- **General**: https://github.com/vanj900
 - **Technical**: Open a GitHub Discussion
-- **Licensing**: licensing@o1labs.community
-- **Security**: security@o1labs.community
+- **Licensing**: https://github.com/vanj900
+- **Security**: https://github.com/vanj900/sovereign-stack/issues
 
 ---
 
@@ -630,4 +630,4 @@ Every contribution, no matter how small, helps build autonomous communities and 
 
 **Version**: 1.0
 **Last Updated**: January 22, 2026
-**Maintained By**: O1 Labs CIC
+**Maintained By**: vanj900

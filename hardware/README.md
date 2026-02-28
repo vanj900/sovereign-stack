@@ -171,7 +171,7 @@ Complete energy infrastructure designs.
 3. Obtaining required permits
 4. Passing inspections
 
-**O1 Labs CIC provides these designs "AS IS" without warranty. You assume all risk.**
+**vanj900 provides these designs "AS IS" without warranty. You assume all risk.**
 
 See [/docs/legal/liability-disclaimer.md](../docs/legal/liability-disclaimer.md)
 
@@ -227,7 +227,7 @@ All hardware designs are dual-licensed:
 
 See [LICENSE.md](../LICENSE.md) for details.
 
-**Trademark Notice:** "SOV-HAB" is a trademark of O1 Labs CIC.
+**Trademark Notice:** "SOV-HAB" is a trademark of vanj900.
 
 ---
 
@@ -250,6 +250,6 @@ See [LICENSE.md](../LICENSE.md) for details.
 ## Questions?
 
 - **Design feedback:** Open an issue with `[Hardware]` tag
-- **Build questions:** hello@o1labs.community
-- **Safety concerns:** safety@o1labs.community
-- **Commercial licensing:** licensing@o1labs.community
+- **Build questions:** https://github.com/vanj900
+- **Safety concerns:** https://github.com/vanj900/sovereign-stack/issues
+- **Commercial licensing:** https://github.com/vanj900

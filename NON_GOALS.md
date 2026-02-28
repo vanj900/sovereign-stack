@@ -246,7 +246,7 @@ These boundaries are as non-negotiable as the axioms in CORE.md. They define wha
 Proposed changes to NON_GOALS.md require:
 1. Demonstration that the boundary creates more harm than good
 2. Proof that removing it doesn't enable predictable failure modes
-3. Approval from O1 Labs CIC Directors
+3. Approval from vanj900 Directors
 4. Community discussion period (minimum 90 days)
 
 **If you disagree with these boundaries, fork the project.** That is their purpose.
@@ -255,5 +255,5 @@ Proposed changes to NON_GOALS.md require:
 
 *"Flow over containment. Replication over scaling. Sovereignty as verb, not noun."*
 
-**Maintained By:** O1 Labs CIC
+**Maintained By:** vanj900
 **License:** See [LICENSE.md](LICENSE.md)

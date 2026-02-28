@@ -91,7 +91,7 @@ All meaningful actions **must** generate signed receipts on the Integrity Chain.
 Communities **must** retain the right to fork code, governance, and ledgers at any time. Exit is always an option.
 
 ### 5. Open Source + Asset Lock
-The technology **must** remain open-source under copyleft (AGPL-3.0). Commercial licensing **must** reinvest revenue into community benefit (O1 Labs CIC Asset Lock).
+The technology **must** remain open-source under copyleft (AGPL-3.0). Commercial licensing **must** reinvest revenue into community benefit (vanj900 Asset Lock).
 
 ---
 
@@ -100,7 +100,7 @@ The technology **must** remain open-source under copyleft (AGPL-3.0). Commercial
 To clarify what the Sovereign Stack rejects:
 
 ### Not a Startup
-This is not venture-backed, not exit-seeking, not optimizing for acquisition. O1 Labs CIC operates under an **Asset Lock**—all assets serve community benefit, not private profit.
+This is not venture-backed, not exit-seeking, not optimizing for acquisition. vanj900 operates under an **Asset Lock**—all assets serve community benefit, not private profit.
 
 ### Not a Government
 This is not a proposal for reforming existing institutions. Sovereign Stack communities exist **parallel** to states, not as replacements demanding recognition.
@@ -189,7 +189,7 @@ These axioms are **intentionally rigid**. They define the Sovereign Stack's iden
 Proposed changes to CORE.md require:
 1. Demonstration that existing axioms are insufficient
 2. Proof that the modification doesn't violate other axioms
-3. Approval from O1 Labs CIC Directors
+3. Approval from vanj900 Directors
 4. Community discussion period (minimum 90 days)
 
 **If you disagree with these axioms, fork the project.** That is their purpose.
@@ -198,5 +198,5 @@ Proposed changes to CORE.md require:
 
 *"Flow over containment. Replication over scaling. Sovereignty as verb, not noun."*
 
-**Maintained By:** O1 Labs CIC
+**Maintained By:** vanj900
 **License:** See [LICENSE.md](LICENSE.md)
