@@ -1,5 +1,5 @@
 import { createServer, IncomingMessage, ServerResponse } from 'node:http';
-import { finalizeEvent, getPublicKey } from 'nostr-tools';
+import { finalizeEvent } from 'nostr-tools';
 import { nip19 } from 'nostr-tools';
 import type { EventTemplate } from 'nostr-tools';
 import { NostrClient } from './nostr.js';
