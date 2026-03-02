@@ -104,9 +104,10 @@ The following directories are being migrated into the new structure:
 ### If you're brand new:
 
 1. **[CORE.md](../CORE.md)** (15 min) - Understand the axioms
-2. **[00_Foundation](00_Foundation/)** (30 min) - Learn the philosophy
-3. **[01_Core_Architecture](01_Core_Architecture/)** (1 hour) - Grasp the system design
-4. **[STATUS.md](../STATUS.md)** (10 min) - See current progress
+2. **[PHONE-QUICKSTART.md](PHONE-QUICKSTART.md)** (5 min) - Run a cell from your phone right now
+3. **[00_Foundation](00_Foundation/)** (30 min) - Learn the philosophy
+4. **[01_Core_Architecture](01_Core_Architecture/)** (1 hour) - Grasp the system design
+5. **[STATUS.md](../STATUS.md)** (10 min) - See current progress
 
 ### If you're a developer:
 

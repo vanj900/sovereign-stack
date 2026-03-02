@@ -1,14 +1,44 @@
 # STATUS.md
 
-**Project Status:** Phase 2 - Stabilization & First Cell Deployment
-**Last Updated:** February 28, 2026
+**Project Status:** Phase 2 — Phone Cell Stabilisation (Months 6–12)
+**Last Updated:** March 2026
 **Maintained By:** vanj900
 
 ---
 
-## Current Phase: Phase 2 (Months 6-12)
+## Phase Timeline
 
-The Sovereign Stack is **not "just starting"**. Core systems are complete and validated. We are currently in the **stabilization phase**, preparing for first multi-node Cell deployment.
+| Phase | Timeline | Status |
+|-------|----------|--------|
+| **Phase 1 — Foundation** | Months 1–6 | ✅ Complete |
+| **Phase 2 — Phone Cell Stabilisation** | Months 6–12 | ⏳ In progress |
+| **Phase 3 — Regenerative Systems** | Months 12–24 | 📋 Planning |
+| **Phase 4 — Physical Replication** | 2027+ | 💡 Conceptual |
+
+**Phase 1 — Foundation (done):** CORE axioms, deed-ledger, GhostStack protocols, shadow-net bridge MVP, governance sims.
+
+**Phase 2 — Phone Cell Stabilisation (Months 6–12, right now):** 3-7 node cells running 100% on phones. First real local group, first governance proposal over mesh, first fork test. Complete by September 2026.
+
+**Phase 3 — Regenerative Systems (Months 12–24):** Add optional cheap LoRa nodes, energy tracking on phones, remediation pipelines, Essential 13 skills.
+
+**Phase 4 — Physical Replication (2027+):** SOV-HAB, Energy Coupler hardware, full land cells. Only after the digital cells are forking and making money.
+
+---
+
+## Current Phase: Phase 2 (Months 6–12) — Phone Cell Stabilisation
+
+The Sovereign Stack is **not "just starting"**. Core systems are complete and validated. We are currently in the **phone cell stabilisation phase**: 3–7 node cells running 100% on phones, no hardware required.
+
+> 📱 **Run the entire sovereign cell from your phone today.** See [docs/PHONE-QUICKSTART.md](docs/PHONE-QUICKSTART.md) and [install-sovereign-cell.sh](install-sovereign-cell.sh).
+
+### Phase 2 Milestones
+
+| Milestone | Target | Status |
+|-----------|--------|--------|
+| Phone install guide + 3-node sim working on real devices | Week 2 | ⏳ |
+| First live 3-person cell sending LoRa/Bluetooth receipts | Month 2 | 📋 |
+| 7-node stress test + first intentional fork executed | Month 3 | 📋 |
+| 3 separate phone cells in different cities, all forking from the original repo | Month 6 | 📋 |
 
 ---
 
@@ -106,10 +136,10 @@ The Sovereign Stack is **not "just starting"**. Core systems are complete and va
 
 ---
 
-## Phase 2: Stabilization & First Cell (Current ⏳)
+## Phase 2: Phone Cell Stabilisation (Current ⏳)
 
-**Timeline:** Months 6-12
-**Status:** MVP governance core stabilized — Shadow-Net LoRa bridge shipped
+**Timeline:** Months 6–12
+**Status:** MVP governance core stabilized — Shadow-Net LoRa bridge shipped — pivoting to phone-first cells
 
 ---
 
@@ -172,31 +202,19 @@ The Sovereign Stack is **not "just starting"**. Core systems are complete and va
 
 ---
 
-### ⏳ First Cell Deployment (3-7 Nodes)
+### ⏳ First Cell Deployment (3–7 Nodes, Phone-Only)
 
 **Current Work:**
-- Site selection and land acquisition
-- First SOV-HAB construction (prototype validation)
-- Multi-node mesh testing (energy + communication)
-- Governance protocols live testing
+- Phone-based mesh testing (Bluetooth + WiFi direct)
+- Governance protocols live testing on Android devices
 - Fork simulation (peaceful divergence validation)
-
-**Blockers:**
-- Land acquisition regulatory complexity
-- Supply chain for specialized components (MLDT sensors)
-- Community member recruitment and onboarding
+- Recruiting 2–6 local participants per cell
 
 **Next Milestones:**
-- First SOV-HAB occupied (Month 8 target)
-- Second node connected to mesh (Month 9 target)
-- First governance proposal executed (Month 10 target)
-- First intentional fork validated (Month 11 target)
-
-**What This Will Enable:**
-- Proof of concept for multi-node operation
-- Real-world validation of governance protocols
-- Demonstration that forking works as intended
-- Evidence for regulatory compliance
+- Phone install guide + 3-node sim on real devices (Week 2 target)
+- First live 3-person cell sending receipts over phone mesh (Month 2 target)
+- First governance proposal executed (Month 3 target)
+- First intentional fork validated (Month 3 target)
 
 ---
 
@@ -277,10 +295,12 @@ The Sovereign Stack is **not "just starting"**. Core systems are complete and va
 
 ## Phase 3: Regenerative Systems (Planned)
 
-**Timeline:** Months 12-24
+**Timeline:** Months 12–24
 **Status:** Planning stage
 
 ### Planned Work:
+
+**Optional hardware additions:** Cheap LoRa nodes, energy tracking on phones, remediation pipelines, Essential 13 skills.
 
 #### Agriculture
 - AI-managed polyculture (soil-first regeneration)
@@ -309,13 +329,14 @@ The Sovereign Stack is **not "just starting"**. Core systems are complete and va
 
 ---
 
-## Phase 4: Replication (Future Vision)
+## Phase 4: Physical Replication (Future Vision)
 
-**Timeline:** Months 24+
-**Status:** Conceptual
+**Timeline:** 2027+
+**Status:** Conceptual — only after digital cells are forking and self-sustaining
 
 ### Vision:
 
+- **SOV-HAB habitats and Energy Coupler hardware** (physical land cells)
 - **10+ cells operating independently** (horizontal replication validated)
 - **Fork diversity demonstrated** (multiple governance models coexisting)
 - **Regenerative systems proven** (30%+ food self-sufficiency)

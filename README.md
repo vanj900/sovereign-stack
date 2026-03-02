@@ -123,13 +123,15 @@ Full details in [STATUS.md](STATUS.md).
 | Phase | Timeline | Status |
 |-------|----------|--------|
 | **Phase 1 — Foundation** | Months 1–6 | ✅ Complete |
-| **Phase 2 — Stabilisation & First Cell** | Months 6–12 | ⏳ In progress |
+| **Phase 2 — Phone Cell Stabilisation** | Months 6–12 | ⏳ In progress |
 | **Phase 3 — Regenerative Systems** | Months 12–24 | 📋 Planning |
-| **Phase 4 — Replication** | Months 24+ | 💡 Conceptual |
+| **Phase 4 — Physical Replication** | 2027+ | 💡 Conceptual |
 
-**Phase 1 deliverables (complete):** GhostStack core, SOV-HAB specifications, GhostBrain architecture, defense protocols.
+**Phase 1 deliverables (complete):** CORE axioms, deed-ledger, GhostStack protocols, shadow-net bridge MVP, governance sims.
 
-**Phase 2 current work:** First SOV-HAB prototype, multi-node mesh testing, governance protocols live testing, Energy Coupler hardware prototype.
+**Phase 2 current work:** Phone-local 3-7 node cells (no hardware required). First real local group, first governance proposal over mesh, first fork test. Complete by September 2026.
+
+> 📱 **Run the entire sovereign cell from your phone today.** See [docs/PHONE-QUICKSTART.md](docs/PHONE-QUICKSTART.md) and [install-sovereign-cell.sh](install-sovereign-cell.sh).
 
 ---
 
