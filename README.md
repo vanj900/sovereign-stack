@@ -43,7 +43,7 @@ It is built on three irreducible principles—Flow Over Containment, Sovereignty
 
 Modern infrastructure concentrates control: energy grids, financial systems, and governance structures all funnel power upward. The Sovereign Stack is a counter-architecture—a complete, forkable blueprint for communities that want to control their own energy, water, food, governance, and communication without depending on centralised institutions.
 
-The basic unit is a **Cell**: 3–7 nodes (households or individuals). When a Cell grows beyond that, it forks horizontally into new Cells rather than scaling into hierarchy. Every action—every vote, energy transfer, or water quality reading—generates a cryptographic **Receipt** on an append-only **Integrity Chain**, replacing institutional trust with mathematical accountability.
+The atomic unit is a **Node**: a single household or individual running the Sovereign Stack. When 3 or more nodes mutually connect via mesh and exchange deeds, a **Cell** emerges organically — no top-down creation, no administrator required. When a Cell grows beyond 7 nodes, it forks horizontally into new Cells rather than scaling into hierarchy. Every action—every vote, energy transfer, or water quality reading—generates a cryptographic **Receipt** on an append-only **Integrity Chain**, replacing institutional trust with mathematical accountability.
 
 This is not a startup, a government, a blockchain project, or a utopia. See [NON_GOALS.md](NON_GOALS.md) for the four boundaries we actively defend.
 
@@ -61,12 +61,31 @@ Energy, data, and trust must circulate rather than accumulate. Resources route t
 ### 2. Sovereignty via Forkability
 > *"Everything forks, nothing centralises."*
 
-The Cell (3–7 nodes) is the maximum unit. Growth happens by replication, not hierarchy. Any community can fork code, governance, and ledgers at any time—exit rights are unconditional.
+Nodes are the atomic units; Cells emerge when nodes mutually connect — they are never created top-down. The Cell (3–7 nodes) is the maximum unit. Growth happens by replication, not hierarchy. Any community can fork code, governance, and ledgers at any time—exit rights are unconditional.
 
 ### 3. Truth by Receipts
 > *"Receipts replace bureaucracy."*
 
 Every meaningful action generates a cryptographically signed Receipt on the Integrity Chain. Power requires proof, not proclamation.
+
+---
+
+## Emergent Cell Formation
+
+Cells are not created — they emerge.
+
+**Threshold:** When 3 or more nodes mutually connect via mesh and each node holds a verified deed from every other node in the group, the shared Integrity Chain genesis triggers automatically.
+
+| Step | What Happens |
+|------|-------------|
+| **1 node** | Standalone sovereign node; full deed-ledger, local governance |
+| **2 nodes** | Bilateral mesh link; deeds exchanged, chain not yet shared |
+| **3+ nodes (mutual deeds)** | Shared Integrity Chain genesis — Cell emerges organically |
+| **8+ nodes** | Fork threshold reached; Cell splits horizontally into two Cells |
+
+There is no "create cell" command. There is no administrator. The Cell is an emergent property of nodes choosing to connect and trust one another through mutual deed exchange.
+
+> *"Flow over containment, replication over scaling."* — These axioms mean no cell is ever imposed from above; it crystallises from peer relationship.
 
 ---
 
@@ -129,9 +148,9 @@ Full details in [STATUS.md](STATUS.md).
 
 **Phase 1 deliverables (complete):** CORE axioms, deed-ledger, GhostStack protocols, shadow-net bridge MVP, governance sims.
 
-**Phase 2 current work:** Phone-local 3-7 node cells (no hardware required). First real local group, first governance proposal over mesh, first fork test. Complete by September 2026.
+**Phase 2 current work:** Phone-local sovereign nodes (no hardware required) that emerge into Cells of 3–7 when mutually connected. First real local group, first governance proposal over mesh, first fork test. Complete by September 2026.
 
-> 📱 **Run the entire sovereign cell from your phone today.** See [docs/PHONE-QUICKSTART.md](docs/PHONE-QUICKSTART.md) and [install-sovereign-cell.sh](install-sovereign-cell.sh).
+> 📱 **Run your sovereign node from your phone today.** See [docs/PHONE-QUICKSTART.md](docs/PHONE-QUICKSTART.md) and [install-sovereign-cell.sh](install-sovereign-cell.sh).
 
 ---
 
