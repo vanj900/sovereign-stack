@@ -1,8 +1,8 @@
-# Phone Quickstart — Run a Sovereign Cell from Your Android Phone
+# Phone Quickstart — Run a Sovereign Node from Your Android Phone
 
 **No hardware required. No server. No ISP.**
 
-You can run the entire sovereign cell — deed-ledger, GhostStack governance, Shadow-Net mesh — from an Android phone using [Termux](https://termux.dev).
+You can run your sovereign node — deed-ledger, GhostStack governance, Shadow-Net mesh — from an Android phone using [Termux](https://termux.dev). When 3 or more nodes mutually connect and exchange deeds, a Cell emerges organically — no top-down creation required.
 
 ---
 
@@ -39,16 +39,31 @@ This script will:
 
 ---
 
+## Emergent Cell Formation
+
+Cells are not created — they emerge from nodes choosing to connect.
+
+| State | What It Means |
+|-------|--------------|
+| **1 node running** | You are sovereign. Full deed-ledger and local governance active. |
+| **2 nodes connected** | Bilateral mesh link; deeds exchanged, shared chain not yet formed. |
+| **3+ nodes with mutual deeds** | Shared Integrity Chain genesis — Cell emerges automatically. |
+| **8+ nodes** | Fork threshold; Cell splits horizontally into two independent Cells. |
+
+There is no "create cell" command. The Cell crystallises from peer relationship.
+
+---
+
 ## What Happens After Install
 
 ```
-Sovereign Cell — Node 1 of 3
+Sovereign Node — Standalone (0 peers connected)
 Deed-ledger address : sov://abc123...
 Mesh status         : listening (Bluetooth LE + WiFi Direct)
 Governance          : ready (0 proposals pending)
 
-Share this invite to add nodes:
-  sov-invite://abc123...?cell=genesis
+Share this invite to connect nodes:
+  sov-invite://abc123...
 
 Type 'help' for available commands.
 ```
@@ -88,7 +103,7 @@ This starts 3 simulated nodes, sends proposals, and prints receipts — all on o
 python src/mesh/shadow-net/bridge/cli.py join sov-invite://YOUR_INVITE_LINK
 ```
 
-Once 3+ nodes are connected the cell is live. Every proposal, vote, and fork generates a receipt on the deed-ledger automatically.
+Once 3+ nodes mutually connect and exchange deeds, a Cell emerges organically. Every proposal, vote, and fork generates a receipt on the deed-ledger automatically.
 
 ---
 
