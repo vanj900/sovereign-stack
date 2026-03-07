@@ -682,6 +682,373 @@ class TestThreeNodeCell(unittest.TestCase):
 
 
 # ===========================================================================
+# Cell / Unit / Federation Hierarchy (07)
+# ===========================================================================
+
+class TestCellUnitHierarchy(unittest.TestCase):
+    """Tests from 07_cell_unit_hierarchy.py — Node, Cell, Unit, FederationAlliance."""
+
+    def setUp(self):
+        self.mod = _load_module("07_cell_unit_hierarchy.py")
+
+    # -----------------------------------------------------------------------
+    # SovereignNode
+    # -----------------------------------------------------------------------
+
+    def test_node_creates_master_did(self):
+        node = self.mod.SovereignNode("alice", "human")
+        self.assertEqual(node.master_did, "did:sov:alice")
+
+    def test_node_types_accepted(self):
+        for ntype in ("human", "sov_hab", "ghost_brain"):
+            n = self.mod.SovereignNode(f"n_{ntype}", ntype)
+            self.assertEqual(n.node_type, ntype)
+
+    def test_node_invalid_type_raises(self):
+        with self.assertRaises(ValueError):
+            self.mod.SovereignNode("x", "robot")
+
+    def test_context_did_is_deterministic(self):
+        node = self.mod.SovereignNode("alice", "human")
+        cdid1 = node.derive_context_did("cell-A")
+        cdid2 = node.derive_context_did("cell-A")
+        self.assertEqual(cdid1, cdid2)
+
+    def test_context_dids_differ_across_cells(self):
+        node = self.mod.SovereignNode("alice", "human")
+        cdid_a = node.derive_context_did("cell-A")
+        cdid_b = node.derive_context_did("cell-B")
+        self.assertNotEqual(cdid_a, cdid_b)
+
+    def test_phc_assignment(self):
+        node = self.mod.SovereignNode("alice", "human")
+        node.set_phc("PHC-1")
+        self.assertEqual(node.phc_id, "PHC-1")
+
+    def test_duplicate_phc_raises(self):
+        node = self.mod.SovereignNode("alice", "human")
+        node.set_phc("PHC-1")
+        with self.assertRaises(ValueError):
+            node.set_phc("PHC-2")
+
+    def test_fc_join_up_to_three(self):
+        node = self.mod.SovereignNode("alice", "human")
+        node.join_fc("FC-1")
+        node.join_fc("FC-2")
+        node.join_fc("FC-3")
+        self.assertEqual(node.fc_ids, ["FC-1", "FC-2", "FC-3"])
+
+    def test_fourth_fc_raises(self):
+        node = self.mod.SovereignNode("alice", "human")
+        node.join_fc("FC-1")
+        node.join_fc("FC-2")
+        node.join_fc("FC-3")
+        with self.assertRaises(ValueError):
+            node.join_fc("FC-4")
+
+    def test_duplicate_fc_is_idempotent(self):
+        node = self.mod.SovereignNode("alice", "human")
+        node.join_fc("FC-1")
+        node.join_fc("FC-1")   # should not raise or double-count
+        self.assertEqual(node.fc_ids, ["FC-1"])
+
+    # -----------------------------------------------------------------------
+    # Cell
+    # -----------------------------------------------------------------------
+
+    def test_cell_creation_phc(self):
+        cell = self.mod.Cell("PHC-test", "primary_home_cell")
+        self.assertEqual(cell.cell_id, "PHC-test")
+        self.assertEqual(cell.cell_type, "primary_home_cell")
+
+    def test_cell_creation_fc(self):
+        cell = self.mod.Cell("FC-test", "functional_cell")
+        self.assertEqual(cell.cell_type, "functional_cell")
+
+    def test_cell_invalid_type_raises(self):
+        with self.assertRaises(ValueError):
+            self.mod.Cell("bad", "super_cell")
+
+    def test_cell_not_quorate_below_min(self):
+        cell = self.mod.Cell("PHC-q", "primary_home_cell")
+        cell.add_node(self.mod.SovereignNode("a", "human"))
+        cell.add_node(self.mod.SovereignNode("b", "human"))
+        self.assertFalse(cell.is_quorate())
+
+    def test_cell_quorate_at_min(self):
+        cell = self.mod.Cell("PHC-q", "primary_home_cell")
+        for name in ("a", "b", "c"):
+            cell.add_node(self.mod.SovereignNode(name, "human"))
+        self.assertTrue(cell.is_quorate())
+
+    def test_phc_add_node_sets_phc_on_node(self):
+        cell = self.mod.Cell("PHC-1", "primary_home_cell")
+        node = self.mod.SovereignNode("alice", "human")
+        cell.add_node(node)
+        self.assertEqual(node.phc_id, "PHC-1")
+
+    def test_fc_add_node_sets_fc_on_node(self):
+        cell = self.mod.Cell("FC-1", "functional_cell")
+        node = self.mod.SovereignNode("alice", "human")
+        cell.add_node(node)
+        self.assertIn("FC-1", node.fc_ids)
+
+    def test_duplicate_node_raises(self):
+        cell = self.mod.Cell("PHC-1", "primary_home_cell")
+        node = self.mod.SovereignNode("alice", "human")
+        cell.add_node(node)
+        with self.assertRaises(ValueError):
+            cell.add_node(node)
+
+    def test_cell_cap_at_seven(self):
+        cell = self.mod.Cell("PHC-cap", "primary_home_cell")
+        for i in range(self.mod.CELL_MAX):
+            cell.add_node(self.mod.SovereignNode(f"n{i}", "human"))
+        overflow = self.mod.SovereignNode("overflow", "human")
+        with self.assertRaises(ValueError):
+            cell.add_node(overflow)
+
+    def test_cell_fork_requires_over_max(self):
+        cell = self.mod.Cell("PHC-nofork", "primary_home_cell")
+        for i in range(3):
+            cell.add_node(self.mod.SovereignNode(f"x{i}", "human"))
+        with self.assertRaises(ValueError):
+            cell.fork()
+
+    def test_cell_fork_splits_nodes(self):
+        cell = self.mod.Cell("PHC-fork", "primary_home_cell")
+        # Inject 8 nodes directly to simulate over-limit state
+        for i in range(8):
+            n = self.mod.SovereignNode(f"fn{i}", "human")
+            n._phc_id = cell.cell_id
+            cell._nodes.append(n)
+        left, right = cell.fork()
+        self.assertEqual(left.size + right.size, 8)
+        self.assertEqual(left.forked_from, "PHC-fork")
+        self.assertEqual(right.forked_from, "PHC-fork")
+
+    def test_cell_fork_child_ids_correct(self):
+        cell = self.mod.Cell("PHC-x", "primary_home_cell")
+        for i in range(8):
+            n = self.mod.SovereignNode(f"gn{i}", "human")
+            n._phc_id = cell.cell_id
+            cell._nodes.append(n)
+        left, right = cell.fork()
+        self.assertEqual(left.cell_id, "PHC-x-fork-0")
+        self.assertEqual(right.cell_id, "PHC-x-fork-1")
+
+    def test_cell_treasury_contribution(self):
+        cell = self.mod.Cell("PHC-t", "primary_home_cell")
+        cell.contribute(50, "alice")
+        cell.contribute(30, "bob")
+        self.assertEqual(cell.treasury, 80)
+
+    def test_cell_vote_majority_passes(self):
+        cell = self.mod.Cell("PHC-v", "primary_home_cell")
+        nodes = [self.mod.SovereignNode(n, "human") for n in ("a", "b", "c")]
+        for node in nodes:
+            cell.add_node(node)
+        result = cell.vote("test proposal", {"a": "APPROVE", "b": "APPROVE", "c": "REJECT"})
+        self.assertEqual(result, "PASSED")
+
+    def test_cell_vote_majority_fails(self):
+        cell = self.mod.Cell("PHC-v2", "primary_home_cell")
+        nodes = [self.mod.SovereignNode(n, "human") for n in ("a", "b", "c")]
+        for node in nodes:
+            cell.add_node(node)
+        result = cell.vote("test proposal", {"a": "REJECT", "b": "REJECT", "c": "APPROVE"})
+        self.assertEqual(result, "FAILED")
+
+    def test_cell_vote_non_member_raises(self):
+        cell = self.mod.Cell("PHC-v3", "primary_home_cell")
+        for n in ("a", "b", "c"):
+            cell.add_node(self.mod.SovereignNode(n, "human"))
+        with self.assertRaises(ValueError):
+            cell.vote("test", {"a": "APPROVE", "outsider": "APPROVE", "b": "REJECT"})
+
+    # -----------------------------------------------------------------------
+    # BridgeContract
+    # -----------------------------------------------------------------------
+
+    def test_bridge_contract_requires_two_cells(self):
+        with self.assertRaises(ValueError):
+            self.mod.BridgeContract("BC-bad", ["only-one"], "desc", "terms")
+
+    def test_bridge_contract_not_expired_immediately(self):
+        bc = self.mod.BridgeContract("BC-1", ["c1", "c2"], "desc", "terms",
+                                     duration_seconds=86400)
+        self.assertFalse(bc.is_expired())
+
+    def test_bridge_contract_status_active_on_create(self):
+        bc = self.mod.BridgeContract("BC-2", ["c1", "c2"], "desc", "terms")
+        self.assertEqual(bc.status, "active")
+
+    def test_bridge_contract_expire(self):
+        bc = self.mod.BridgeContract("BC-3", ["c1", "c2"], "desc", "terms")
+        bc.expire()
+        self.assertEqual(bc.status, "expired")
+
+    def test_bridge_contract_complete(self):
+        bc = self.mod.BridgeContract("BC-4", ["c1", "c2"], "desc", "terms")
+        bc.complete()
+        self.assertEqual(bc.status, "completed")
+
+    # -----------------------------------------------------------------------
+    # Unit
+    # -----------------------------------------------------------------------
+
+    def _make_quorate_unit(self, unit_id: str = "U-test") -> tuple:
+        """Return a Unit with 3 minimal cells already added."""
+        unit = self.mod.Unit(unit_id)
+        cells = []
+        for i in range(3):
+            c = self.mod.Cell(f"C-{unit_id}-{i}", "functional_cell")
+            c.add_node(self.mod.SovereignNode(f"un{unit_id}{i}", "human"))
+            unit.add_cell(c)
+            cells.append(c)
+        return unit, cells
+
+    def test_unit_creation(self):
+        unit = self.mod.Unit("U-1")
+        self.assertEqual(unit.unit_id, "U-1")
+        self.assertEqual(unit.size, 0)
+
+    def test_unit_add_cell(self):
+        unit, cells = self._make_quorate_unit()
+        self.assertEqual(unit.size, 3)
+
+    def test_unit_quorate_at_min(self):
+        unit, _ = self._make_quorate_unit()
+        self.assertTrue(unit.is_quorate())
+
+    def test_unit_not_quorate_below_min(self):
+        unit = self.mod.Unit("U-nq")
+        c = self.mod.Cell("C-nq", "functional_cell")
+        c.add_node(self.mod.SovereignNode("n0", "human"))
+        unit.add_cell(c)
+        self.assertFalse(unit.is_quorate())
+
+    def test_unit_node_count(self):
+        unit = self.mod.Unit("U-nc")
+        for i in range(3):
+            c = self.mod.Cell(f"C-nc-{i}", "functional_cell")
+            for j in range(3):
+                c.add_node(self.mod.SovereignNode(f"nc{i}{j}", "human"))
+            unit.add_cell(c)
+        self.assertEqual(unit.node_count(), 9)
+
+    def test_unit_cap_at_seven(self):
+        unit = self.mod.Unit("U-cap")
+        for i in range(self.mod.UNIT_MAX):
+            c = self.mod.Cell(f"C-cap-{i}", "functional_cell")
+            c.add_node(self.mod.SovereignNode(f"uc{i}", "human"))
+            unit.add_cell(c)
+        overflow = self.mod.Cell("C-overflow", "functional_cell")
+        overflow.add_node(self.mod.SovereignNode("uo", "human"))
+        with self.assertRaises(ValueError):
+            unit.add_cell(overflow)
+
+    def test_unit_duplicate_cell_raises(self):
+        unit = self.mod.Unit("U-dup")
+        c = self.mod.Cell("C-dup", "functional_cell")
+        c.add_node(self.mod.SovereignNode("n0", "human"))
+        unit.add_cell(c)
+        with self.assertRaises(ValueError):
+            unit.add_cell(c)
+
+    def test_unit_bridge_contract_registered(self):
+        unit, cells = self._make_quorate_unit("U-bc")
+        bc = self.mod.BridgeContract(
+            "BC-test", [cells[0].cell_id, cells[1].cell_id], "desc", "terms"
+        )
+        unit.add_bridge_contract(bc)
+        self.assertIn(bc, unit.bridge_contracts)
+
+    def test_unit_bridge_contract_non_member_raises(self):
+        unit, _ = self._make_quorate_unit("U-bcr")
+        bc = self.mod.BridgeContract("BC-bad", ["stranger-1", "stranger-2"], "d", "t")
+        with self.assertRaises(ValueError):
+            unit.add_bridge_contract(bc)
+
+    def test_unit_fork_requires_over_max(self):
+        unit, _ = self._make_quorate_unit("U-nf")
+        with self.assertRaises(ValueError):
+            unit.fork()
+
+    def test_unit_fork_splits_cells(self):
+        unit = self.mod.Unit("U-f")
+        # Inject 8 cells directly to simulate over-limit state
+        for i in range(8):
+            c = self.mod.Cell(f"CF-{i}", "functional_cell")
+            unit._cells.append(c)
+        left, right = unit.fork()
+        self.assertEqual(left.size + right.size, 8)
+        self.assertEqual(left.forked_from, "U-f")
+        self.assertEqual(right.forked_from, "U-f")
+
+    def test_unit_fork_child_ids_correct(self):
+        unit = self.mod.Unit("U-fi")
+        for i in range(8):
+            unit._cells.append(self.mod.Cell(f"CFI-{i}", "functional_cell"))
+        left, right = unit.fork()
+        self.assertEqual(left.unit_id, "U-fi-fork-0")
+        self.assertEqual(right.unit_id, "U-fi-fork-1")
+
+    # -----------------------------------------------------------------------
+    # FederationAlliance
+    # -----------------------------------------------------------------------
+
+    def _make_unit(self, uid: str) -> object:
+        return self.mod.Unit(uid)
+
+    def test_federation_creation(self):
+        u1, u2 = self._make_unit("F-U1"), self._make_unit("F-U2")
+        fed = self.mod.FederationAlliance("FED-1", "federation", [u1, u2],
+                                          "test purpose", 2592000)
+        self.assertEqual(fed.fa_id, "FED-1")
+        self.assertEqual(fed.fa_type, "federation")
+        self.assertTrue(fed.is_opt_in)
+
+    def test_alliance_creation(self):
+        u = self._make_unit("A-U1")
+        alliance = self.mod.FederationAlliance("ALL-1", "alliance", [u],
+                                               "crisis mesh", 604800)
+        self.assertEqual(alliance.fa_type, "alliance")
+
+    def test_federation_invalid_type_raises(self):
+        u = self._make_unit("X-U1")
+        with self.assertRaises(ValueError):
+            self.mod.FederationAlliance("BAD", "commune", [u], "p", 1000)
+
+    def test_federation_empty_units_raises(self):
+        with self.assertRaises(ValueError):
+            self.mod.FederationAlliance("BAD", "federation", [], "p", 1000)
+
+    def test_federation_not_expired_immediately(self):
+        u = self._make_unit("NE-U1")
+        fed = self.mod.FederationAlliance("FED-NE", "federation", [u], "p", 86400)
+        self.assertFalse(fed.is_expired())
+
+    def test_federation_is_opt_in_invariant(self):
+        u = self._make_unit("OI-U1")
+        fed = self.mod.FederationAlliance("FED-OI", "federation", [u], "p", 1000)
+        self.assertIs(fed.is_opt_in, True)
+
+    def test_federation_add_unit_opt_in(self):
+        u1 = self._make_unit("FA-U1")
+        u2 = self._make_unit("FA-U2")
+        fed = self.mod.FederationAlliance("FED-FA", "federation", [u1], "p", 1000)
+        fed.add_unit(u2)
+        self.assertEqual(len(fed.units), 2)
+
+    def test_federation_add_duplicate_unit_is_idempotent(self):
+        u1 = self._make_unit("FD-U1")
+        fed = self.mod.FederationAlliance("FED-FD", "federation", [u1], "p", 1000)
+        fed.add_unit(u1)   # adding the same unit again should be a no-op
+        self.assertEqual(len(fed.units), 1)
+
+
+# ===========================================================================
 # Run all tests
 # ===========================================================================
 
