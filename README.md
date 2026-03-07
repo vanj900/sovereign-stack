@@ -27,6 +27,7 @@ It is built on three irreducible principles—Flow Over Containment, Sovereignty
 
 - [What Is This?](#what-is-this)
 - [Three Core Axioms](#three-core-axioms)
+- [Fractal Hierarchy](#fractal-hierarchy)
 - [Five-Layer Architecture](#five-layer-architecture)
 - [Hardware Subsystems](#hardware-subsystems)
 - [Software Components](#software-components)
@@ -86,6 +87,53 @@ Cells are not created — they emerge.
 There is no "create cell" command. There is no administrator. The Cell is an emergent property of nodes choosing to connect and trust one another through mutual deed exchange.
 
 > *"Flow over containment, replication over scaling."* — These axioms mean no cell is ever imposed from above; it crystallises from peer relationship.
+
+---
+
+## Fractal Hierarchy
+
+The Sovereign Stack organises agents into a four-level fractal structure governed by the principle of **flow over containment**: replication and forking are always preferred over vertical scaling.
+
+### Nodes — the individual unit of agency
+
+A **Node** is the basic constituent: a single sovereign agent (individual human, SOV-HAB household, or GhostBrain AI).
+
+- **Governance:** one node, one vote within its primary context.
+- **Identity:** each node holds a *Master DID* and derives per-cell *Context DIDs* (cDIDs) so participation in multiple cells cannot be correlated into a universal dossier.
+- **Membership:** belongs to exactly **one** Primary Home Cell (PHC) and at most **three** concurrent Functional Cells (FCs).
+
+### Cells — the fundamental organisational unit
+
+A **Cell** is the core unit of social and technical coordination, hard-capped at **3–7 nodes** to preserve meaningful consensus and prevent corruption.
+
+| Cell type | Purpose | Limit per node |
+|-----------|---------|---------------|
+| **Primary Home Cell (PHC)** | Base identity and default governance | Exactly one |
+| **Functional Cell (FC)** | Specialised work (Health, Education, Energy, …) | Up to three |
+
+- When a Cell exceeds 7 nodes it **forks horizontally** into two new Cells.
+- Cells pool resources, manage treasuries, and make decisions recorded as signed receipts on the Integrity Chain.
+
+### Units — clusters for larger coordination
+
+A **Unit** groups **3–7 Cells** (~9–49 nodes) for cross-cell work.
+
+- Inter-cell cooperation is formalised through **Bridge Contracts** — auditable, time-limited agreements covering shared work, resource flows, and data exchange.
+- When a Unit exceeds 7 Cells it **forks horizontally**.
+
+### Federations and Alliances — opt-in, time-boxed coordination
+
+**Federations** and **Alliances** link Units for large-scale coordination (e.g., Crisis Mesh).
+
+- Always **opt-in** — Units join voluntarily; participation is never imposed.
+- Always **time-boxed** — every Federation/Alliance carries a mandatory expiry so it can never harden into permanent, centralised authority.
+- **Longevity Protocol**: if stewards withdraw, authority defaults to local Cells via quorum.
+
+### Implementation
+
+- TypeScript interfaces: `src/governance/deed-ledger/packages/schemas/src/types.ts`
+- Python demo and enforcement: `src/ghoststack/examples/07_cell_unit_hierarchy.py`
+- Automated tests (51 tests): `src/ghoststack/examples/test_tutorial.py` — `TestCellUnitHierarchy`
 
 ---
 

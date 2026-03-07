@@ -17,7 +17,8 @@ optional for plots in Layer 3).
 | [`04_bridge_agent.py`](04_bridge_agent.py) | Bridge | Single GhostAgent combining all three layers |
 | [`05_multi_agent_demo.py`](05_multi_agent_demo.py) | Full | Two agents, offline sync, multi-agent governance |
 | [`06_three_node_cell.py`](06_three_node_cell.py) | Cell | 3-node Cell (alice, bob, carol): offline sync, governance, deed-ledger scars/receipts, asymmetric reputation |
-| [`test_tutorial.py`](test_tutorial.py) | Tests | 42 automated tests covering all layers, the bridge, multi-agent, 3-node Cell, and deed-ledger scar/receipt lifecycle |
+| [`07_cell_unit_hierarchy.py`](07_cell_unit_hierarchy.py) | Fractal | Full fractal hierarchy: Node → Cell (PHC/FC) → Unit (Bridge Contracts) → FederationAlliance (opt-in, expiring) |
+| [`test_tutorial.py`](test_tutorial.py) | Tests | 93 automated tests covering all layers, the bridge, multi-agent, 3-node Cell, deed-ledger lifecycle, and the full fractal hierarchy |
 
 ---
 
@@ -33,6 +34,7 @@ python 03_layer3_brain.py
 python 04_bridge_agent.py
 python 05_multi_agent_demo.py
 python 06_three_node_cell.py
+python 07_cell_unit_hierarchy.py
 
 # Run the automated test suite (standard library only, no extra deps)
 python test_tutorial.py
@@ -91,14 +93,38 @@ Full 3-node Cell simulation (alice, bob, carol):
   - `verify_chain()` validates hash linkage across all blocks
 - Asymmetric PageRank: carol receives highest endorsement weight → highest reputation score
 
+### `07_cell_unit_hierarchy.py`
+Full fractal organisational hierarchy demo:
+- `SovereignNode` — Master DID, per-cell Context DIDs (cDIDs), PHC + up to three FCs
+- `Cell` — 3–7 node cap enforced; PHC and Functional Cell types; treasury contributions; vote tallying; horizontal fork when over-limit
+- `BridgeContract` — auditable agreement between Cells with optional expiry and status lifecycle (`active` → `completed` / `expired`)
+- `Unit` — 3–7 Cell cap enforced; Bridge Contracts validated against member Cells; horizontal fork when over-limit
+- `FederationAlliance` — opt-in, mandatory expiry; `federation` and `alliance` types
+
 ### `test_tutorial.py`
-Automated test suite (42 tests, standard library only):
+Automated test suite (93 tests, standard library only):
 - Layer 1: queue, daemon, offline/online delivery
 - Layer 2: DIDs, governance, hash-chain receipts, reputation, incentives
 - Layer 3: brain simulation, state persistence
 - Bridge: single `GhostAgent`
 - Multi-agent: two-agent offline/online + joint governance
 - 3-node Cell: `DeedLedger` receipts, scars, recovery lifecycle, chain integrity
+- Fractal hierarchy (51 tests): Node/Cell/Unit/FederationAlliance invariants
+
+---
+
+## Fractal Hierarchy
+
+The Sovereign Stack organises agents into a four-level fractal structure governed by the principle of **flow over containment** — replication and forking always preferred over vertical scaling.
+
+| Level | Size | Fork trigger | Key rule |
+|-------|------|-------------|----------|
+| **Node** | 1 agent | — | One node, one vote; Master DID + per-cell cDIDs; exactly 1 PHC, ≤ 3 FCs |
+| **Cell** | 3–7 nodes | > 7 nodes → horizontal fork | PHC (base governance) or FC (specialised work); pooled treasury |
+| **Unit** | 3–7 Cells | > 7 Cells → horizontal fork | Inter-cell work via Bridge Contracts (auditable, expiring) |
+| **Federation/Alliance** | N units | Mandatory expiry | Opt-in only; time-boxed; authority reverts to Cells on dissolution |
+
+See [`07_cell_unit_hierarchy.py`](07_cell_unit_hierarchy.py) for a runnable demo of every rule, and [`test_tutorial.py`](test_tutorial.py) for 51 automated invariant checks.
 
 ---
 
